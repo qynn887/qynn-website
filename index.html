@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nguyễn Minh Quyên · Đào tạo chuyển đổi AI & phát triển năng lực phụ nữ</title>
+<meta name="description" content="15 năm L&D và lãnh đạo kinh doanh. Chương trình đào tạo chuyển đổi năng lực cùng AI cho doanh nghiệp và đồng hành phát triển năng lực cho phụ nữ đi làm.">
+<meta property="og:title" content="Nguyễn Minh Quyên – Đào tạo chuyển đổi AI & phát triển năng lực phụ nữ">
+<meta property="og:description" content="Bắt đầu từ vấn đề kinh doanh, truy ngược về con người. Chương trình AI cho đội ngũ và đồng hành cùng chị em đi làm.">
+<meta property="og:url" content="https://qynn.io.vn">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4F6; --paper:#FFFFFF; --ink:#1B2438; --muted:#55607A; --line:#D7DCE4;
+  --jade:#16705F; --jade-soft:#DDEEE9; --rose:#A9466A; --rose-soft:#F5E3EA;
+  --serif:"Fraunces", "Noto Serif", Georgia, "Times New Roman", serif;
+  --sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121826; --paper:#1A2233; --ink:#E9EDF4; --muted:#A3AEC4; --line:#2E3a52;
+    --jade:#5CC3AE; --jade-soft:#17322E; --rose:#E58AAB; --rose-soft:#3A2030;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121826; --paper:#1A2233; --ink:#E9EDF4; --muted:#A3AEC4; --line:#2E3a52;
+  --jade:#5CC3AE; --jade-soft:#17322E; --rose:#E58AAB; --rose-soft:#3A2030;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--jade);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+h2{font-size:clamp(1.9rem,1.2rem + 2.4vw,2.9rem);max-width:22ch}
+h3{font-size:1.35rem;font-weight:600}
+p{margin:0 0 1em;max-width:68ch}
+section{padding:clamp(4rem,8vw,7rem) 0}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{font-family:var(--serif);font-size:1.2rem;text-decoration:none;font-weight:600}
+nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.98rem;padding:.8rem 1.35rem;border-radius:999px;background:var(--ink);color:var(--bg);border:2px solid var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.sm{padding:.5rem 1rem;font-size:.9rem}
+@media (max-width:820px){nav ul{display:none}}
+
+/* Hero */
+.hero{padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem)}
+.hero h1{font-size:clamp(2.6rem,1.4rem + 5.2vw,5.4rem);letter-spacing:-.015em;max-width:15ch}
+.hero h1 span{display:block;color:var(--muted)}
+.hero .lede{font-size:1.2rem;color:var(--muted);margin-top:2rem;max-width:56ch}
+.hero .who{margin-top:2.5rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.hero .who strong{font-weight:600}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3.5rem}
+.path{display:block;text-decoration:none;padding:1.6rem 1.8rem;border-radius:20px;border:1px solid var(--line);background:var(--paper)}
+.path.biz{border-left:6px solid var(--jade)}
+.path.her{border-left:6px solid var(--rose)}
+.path b{display:block;font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-bottom:.3rem}
+.path span{color:var(--muted);font-size:.98rem}
+.path:hover{border-color:var(--ink)}
+@media (max-width:700px){.paths{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 span{animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+/* Proof strip */
+.proof{border-block:1px solid var(--line);background:var(--paper);padding:2.2rem 0}
+.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.proof li{font-size:.95rem;color:var(--muted)}
+.proof li b{display:block;font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);line-height:1.1}
+@media (max-width:820px){.proof ul{grid-template-columns:1fr 1fr}}
+
+/* Belief */
+.belief{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.belief blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.4rem,1rem + 1.4vw,2rem);line-height:1.35;border-left:3px solid var(--rose);padding-left:1.4rem}
+@media (max-width:820px){.belief{grid-template-columns:1fr}}
+
+/* Services */
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.svc-head p{color:var(--muted);margin:0}
+.tint-biz{background:var(--jade-soft)}
+.tint-her{background:var(--rose-soft)}
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.prog{background:var(--paper);border-radius:18px;padding:1.8rem;display:flex;flex-direction:column}
+.prog .fmt{font-size:.88rem;color:var(--muted);margin-bottom:.9rem}
+.prog h3{margin-bottom:.8rem}
+.prog ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.97rem}
+.prog li{margin-bottom:.35rem}
+.prog .for{margin-top:auto;padding-top:1.2rem;font-size:.92rem;border-top:1px solid var(--line)}
+.tint-biz .prog .fmt{color:var(--jade)} .tint-her .prog .fmt{color:var(--rose)}
+.pains{columns:2;column-gap:2.5rem;padding-left:1.1rem;margin:0 0 3rem}
+.pains li{break-inside:avoid;margin-bottom:.7rem}
+@media (max-width:900px){.programs{grid-template-columns:1fr}.pains{columns:1}}
+
+/* Process */
+.steps{list-style:none;counter-reset:s;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:1.2rem}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:2.4rem;line-height:1;display:block;margin-bottom:.8rem;color:var(--jade)}
+.steps h3{font-size:1.15rem;margin-bottom:.5rem}
+.steps p{color:var(--muted);font-size:.97rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* Experience */
+.exp{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,6vw,5rem)}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.timeline .yr{color:var(--muted);font-size:.95rem;padding-top:.15rem}
+.timeline h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:.35rem}
+.timeline p{color:var(--muted);font-size:.96rem;margin:0}
+.creds{margin-top:2rem;padding-left:1.1rem;color:var(--muted)}
+@media (max-width:820px){.exp{grid-template-columns:1fr}.timeline li{grid-template-columns:1fr;gap:.2rem}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--bg)}
+.contact h2{max-width:20ch}
+.contact p{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.contact .btn{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.contact .btn.ghost{background:transparent;color:var(--bg)}
+.ways{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.5rem;margin:3rem 0 0;font-size:.98rem}
+.contact dt{opacity:.65}
+.contact dd{margin:0}
+footer{padding:2rem 0;font-size:.88rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">Minh Quyên</a>
+    <nav aria-label="Chính">
+      <ul>
+        <li><a href="#doanh-nghiep">Doanh nghiệp</a></li>
+        <li><a href="#chi-em">Chị em đi làm</a></li>
+        <li><a href="#cach-lam">Cách làm</a></li>
+        <li><a href="#kinh-nghiem">Kinh nghiệm</a></li>
+      </ul>
+    </nav>
+    <a class="btn sm" href="#lien-he">Đặt lịch trao đổi</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <h1>Công nghệ không thay thế con người. <span>Nó giải phóng họ.</span></h1>
+    <p class="lede">Tôi thiết kế chương trình đào tạo giúp đội ngũ doanh nghiệp làm việc cùng AI, và đồng hành cùng những người phụ nữ đi làm nhìn rõ năng lực thật của mình — để làm việc thông minh hơn, sống cân bằng hơn và tạo ra kết quả rõ ràng.</p>
+    <div class="who">
+      <span><strong>Nguyễn Minh Quyên</strong> · 15 năm L&amp;D và lãnh đạo kinh doanh · MBA CFVG – Paris 1 Panthéon-Sorbonne</span>
+    </div>
+    <div class="paths">
+      <a class="path biz" href="#doanh-nghiep"><b>Cho doanh nghiệp</b><span>Chuyển đổi năng lực đội ngũ cùng AI, phát triển đội ngũ nữ và quản lý nữ kế cận.</span></a>
+      <a class="path her" href="#chi-em"><b>Cho chị em đi làm</b><span>Trò chuyện 1:1, workshop nhóm và thực hành AI để gỡ bế tắc sự nghiệp.</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="proof">
+  <div class="wrap">
+    <ul>
+      <li><b>10.000+</b>đối tác kinh doanh từng dẫn dắt, khoảng 90% là phụ nữ</li>
+      <li><b>200+</b>dự án L&amp;D gắn với bài toán kinh doanh cụ thể</li>
+      <li><b>1.000+</b>giờ tư vấn, đồng hành 1:1</li>
+      <li><b>28% → 80%+</b>tỷ lệ đối tác mới ở lại sau tháng đầu</li>
+    </ul>
+  </div>
+</div>
+
+<section>
+  <div class="wrap belief">
+    <blockquote>Khi người phụ nữ nhìn thấy năng lực thật của mình và gắn được mục tiêu cá nhân với mục tiêu của tổ chức, họ không chỉ làm việc. Họ cống hiến.</blockquote>
+    <div>
+      <p>Hơn mười lăm năm, tôi sống cùng lúc hai vai trò: nhà quản lý dẫn dắt mạng lưới hơn 10.000 đối tác trong môi trường đa quốc gia, và người vợ, người mẹ của ba con. Tôi hiểu cảm giác đứng giữa hai thế giới ấy.</p>
+      <p>Những năm gần đây, tôi trực tiếp nghiên cứu và dẫn dắt các chương trình chuyển đổi năng lực cùng AI. Điều tôi thấy rõ nhất: nỗi sợ "bị AI thay thế" tan đi rất nhanh khi người ta được thực hành đúng cách, trên chính công việc hằng ngày của mình.</p>
+      <p>Tôi không phải nhà tâm lý. Tôi là người thúc đẩy kết quả kinh doanh bằng sự phát triển năng lực của con người.</p>
+    </div>
+  </div>
+</section>
+
+<section id="doanh-nghiep" class="tint-biz">
+  <div class="wrap">
+    <div class="svc-head">
+      <h2>Chương trình cho doanh nghiệp</h2>
+      <p>Thiết kế riêng theo bài toán của bạn. Triển khai trực tiếp hoặc online.</p>
+    </div>
+    <ul class="pains">
+      <li>Muốn đưa AI vào vận hành nhưng đội ngũ còn e ngại, dùng rời rạc, chưa ra kết quả.</li>
+      <li>Nhân sự mới rơi rụng sớm; đội ngũ tuyến đầu khó giữ năng lượng bền bỉ.</li>
+      <li>Từng mất những nhân sự, thủ lĩnh nữ giỏi vì bài toán gia đình – sự nghiệp chưa có lời giải.</li>
+      <li>Cần chuyển đội ngũ từ tâm thế "làm cho xong việc" sang người đồng hành có trách nhiệm.</li>
+    </ul>
+    <div class="programs">
+      <article class="prog">
+        <div class="fmt">Lộ trình 6–12 tuần</div>
+        <h3>Chuyển đổi năng lực cùng AI</h3>
+        <p>Đưa AI vào đúng những công việc lặp lại và tốn thời gian nhất của từng phòng ban.</p>
+        <ul>
+          <li>Khảo sát công việc, chọn tình huống dùng AI có tác động lớn</li>
+          <li>Thực hành trên dữ liệu và quy trình thật của doanh nghiệp</li>
+          <li>Xây thư viện câu lệnh, quy trình mẫu dùng chung</li>
+          <li>Đo thời gian tiết kiệm và chất lượng đầu ra</li>
+        </ul>
+        <div class="for">Phù hợp: ban lãnh đạo, quản lý cấp trung, khối văn phòng</div>
+      </article>
+      <article class="prog">
+        <div class="fmt">Workshop 1–2 ngày</div>
+        <h3>AI cho đội ngũ kinh doanh</h3>
+        <p>Giúp đội bán hàng và mạng lưới đối tác chuẩn bị, chăm sóc khách và tạo nội dung nhanh hơn.</p>
+        <ul>
+          <li>Nghiên cứu khách hàng, chuẩn bị buổi gặp với AI</li>
+          <li>Soạn tin nhắn, kịch bản tư vấn, nội dung mạng xã hội</li>
+          <li>Lập kế hoạch kinh doanh cá nhân, theo dõi mục tiêu</li>
+          <li>Nguyên tắc dùng AI an toàn với thông tin khách hàng</li>
+        </ul>
+        <div class="for">Phù hợp: sales, trưởng nhóm, nhà phân phối, đối tác kinh doanh</div>
+      </article>
+      <article class="prog">
+        <div class="fmt">Chương trình 2–3 tháng</div>
+        <h3>Khai mở năng lực đội ngũ nữ</h3>
+        <p>Gắn mục tiêu cá nhân của từng chị em với mục tiêu phòng ban, và chuẩn bị lớp quản lý nữ kế cận.</p>
+        <ul>
+          <li>Đánh giá năng lực, xác định điểm nghẽn thật</li>
+          <li>Workshop nhóm và coaching cho nhóm nòng cốt</li>
+          <li>Mentoring lãnh đạo nữ tiềm năng</li>
+          <li>Kế hoạch giữ chân và phát triển dài hạn</li>
+        </ul>
+        <div class="for">Phù hợp: doanh nghiệp có đội ngũ hoặc mạng lưới kinh doanh đông nữ</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="chi-em" class="tint-her">
+  <div class="wrap">
+    <div class="svc-head">
+      <h2>Đồng hành cùng chị em đi làm</h2>
+      <p>Coaching, mentoring theo vấn đề cụ thể của bạn.</p>
+    </div>
+    <ul class="pains">
+      <li>Quen chu toàn cho người khác mà bỏ quên giá trị của chính mình.</li>
+      <li>Loay hoay với cấp trên, hoặc kiệt sức vì chưa biết dẫn dắt cấp dưới.</li>
+      <li>Muốn bứt phá nhưng thiếu phương pháp, bế tắc với bước tiến sự nghiệp.</li>
+      <li>Lo bị tụt hậu, bị AI thay thế nếu không kịp nâng cấp năng lực.</li>
+    </ul>
+    <div class="programs">
+      <article class="prog">
+        <div class="fmt">1:1 · 60 phút · online</div>
+        <h3>Buổi trò chuyện khai mở</h3>
+        <p>Một giờ để gọi tên điều đang làm bạn kẹt lại, và chọn bước đi đầu tiên.</p>
+        <ul>
+          <li>Lắng nghe tình huống thật của bạn</li>
+          <li>Nhìn lại điểm mạnh bạn đang bỏ quên</li>
+          <li>Ra về với 1–2 hành động cụ thể</li>
+        </ul>
+        <div class="for">Phù hợp: khi bạn cần một người hiểu và giúp bạn nhìn rõ</div>
+      </article>
+      <article class="prog">
+        <div class="fmt">Workshop nhóm · 2–3 tiếng · online</div>
+        <h3>Workshop phát triển năng lực</h3>
+        <p>Học cùng những người phụ nữ có chung trăn trở, theo từng chủ đề.</p>
+        <ul>
+          <li>Hiểu và dùng đúng năng lực của bản thân</li>
+          <li>Làm việc với cấp trên, dẫn dắt cấp dưới</li>
+          <li>Cân bằng sự nghiệp – gia đình bằng hệ thống</li>
+        </ul>
+        <div class="for">Phù hợp: nhân viên, quản lý nữ muốn có phương pháp</div>
+      </article>
+      <article class="prog">
+        <div class="fmt">Workshop thực hành · online</div>
+        <h3>Phụ nữ đi làm cùng AI</h3>
+        <p>Thực hành AI cho công việc và việc nhà, từ người cũng tự học AI khi đang nuôi ba con.</p>
+        <ul>
+          <li>Soạn email, báo cáo, kế hoạch nhanh hơn</li>
+          <li>Tổ chức lịch, việc gia đình, việc học của con</li>
+          <li>Học kỹ năng mới nhanh hơn với AI</li>
+        </ul>
+        <div class="for">Phù hợp: chị em chưa biết bắt đầu với AI từ đâu</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cach-lam">
+  <div class="wrap">
+    <h2>Tôi không bắt đầu từ khóa học</h2>
+    <p style="margin-top:1.2rem;color:var(--muted)">Mỗi chương trình bắt đầu từ vấn đề kinh doanh của bạn, rồi mới đi đến con người và giải pháp đào tạo.</p>
+    <ol class="steps">
+      <li><h3>Hiểu bài toán kinh doanh</h3><p>Chỉ số nào cần thay đổi, ở bộ phận nào, trong bao lâu.</p></li>
+      <li><h3>Truy ngược về con người</h3><p>Đâu là lỗ hổng năng lực cần đào tạo, đâu là vấn đề cần giải pháp khác.</p></li>
+      <li><h3>Thiết kế và triển khai</h3><p>Nội dung bản địa hóa, thực hành trên công việc thật, có AI hỗ trợ.</p></li>
+      <li><h3>Đo kết quả</h3><p>So với chỉ số ban đầu, điều chỉnh và bàn giao để đội ngũ tự vận hành.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="kinh-nghiem" style="background:var(--paper);border-top:1px solid var(--line)">
+  <div class="wrap exp">
+    <div>
+      <h2>Kinh nghiệm thực chiến</h2>
+      <p style="margin-top:1.2rem;color:var(--muted)">15 năm tại một tập đoàn đa quốc gia, quản trị con người và kết quả kinh doanh trong mạng lưới phần lớn là phụ nữ.</p>
+      <ul class="creds">
+        <li>Thạc sĩ Quản trị Kinh doanh (MBA), CFVG – Université Paris 1 Panthéon-Sorbonne</li>
+        <li>Cử nhân Ngôn ngữ Anh, Đại học Phương Đông</li>
+        <li>Chứng chỉ Health Coach</li>
+      </ul>
+    </div>
+    <ol class="timeline">
+      <li><span class="yr">2023 – 2026</span><div><h3>Quản lý Phát triển Năng lực & Kinh doanh Toàn quốc, thành viên Ban Lãnh đạo</h3><p>Dẫn dắt dự án đào tạo chuyển đổi năng lực ứng dụng AI; xây mạng lưới giảng viên được chứng nhận tại 4 chi nhánh, bản địa hóa khoảng 90% chương trình; trực tiếp coaching 8 trong Top 15 đối tác xuất sắc toàn quốc (2025).</p></div></li>
+      <li><span class="yr">2015 – 2023</span><div><h3>Quản lý Vùng, chi nhánh Hà Nội</h3><p>Chi nhánh đạt vị trí số 1 toàn quốc 5 trong 8 năm; quản lý 40 nhân sự và khoảng 8.000 đối tác. Đồng hành cộng đồng S21 từ 2021 – tự vận hành, đóng góp khoảng 50% doanh thu toàn quốc.</p></div></li>
+      <li><span class="yr">2011 – 2015</span><div><h3>Quản lý Kinh doanh Khu vực</h3><p>Huấn luyện kỹ năng bán hàng, lập kế hoạch kinh doanh cho đối tác và trưởng nhóm; Quản lý Khu vực xuất sắc nhất toàn quốc 2013 – 2015.</p></div></li>
+      <li><span class="yr">2010 – 2011</span><div><h3>Điều phối Văn phòng đại diện, Fudo Tetra Corporation (Nhật Bản)</h3><p>Thủ tục pháp lý, giao tiếp đối tác, hành chính văn phòng.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="lien-he" class="contact">
+  <div class="wrap">
+    <h2>Cùng nhìn rõ điểm bắt đầu</h2>
+    <p style="margin-top:1.2rem">Kể tôi nghe bạn đang ở đâu và muốn đi đến đâu. Tôi sẽ phản hồi trong vòng 48 giờ.</p>
+    <div class="ways">
+      <a class="btn" href="mailto:quyen.ng@qynn.io.vn?subject=Trao%20%C4%91%E1%BB%95i%20v%E1%BB%81%20ch%C6%B0%C6%A1ng%20tr%C3%ACnh%20%C4%91%C3%A0o%20t%E1%BA%A1o">Gửi email</a>
+      <a class="btn ghost" href="https://zalo.me/0931091987" target="_blank" rel="noopener">Nhắn Zalo</a>
+      <a class="btn ghost" href="https://linkedin.com/in/quyennm31" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:quyen.ng@qynn.io.vn">quyen.ng@qynn.io.vn</a></dd>
+      <dt>Điện thoại</dt><dd><a href="tel:+84931091987">+84 931 091 987</a></dd>
+      <dt>Khu vực</dt><dd>Hà Nội · nhận chương trình online toàn quốc</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Nguyễn Minh Quyên · qynn.io.vn</div>
+</footer>
+</body>
+</html>
