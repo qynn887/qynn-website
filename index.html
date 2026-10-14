@@ -1,355 +1,665 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nguyễn Minh Quyên · Đào tạo chuyển đổi AI & phát triển năng lực phụ nữ</title>
-<meta name="description" content="15 năm L&D và lãnh đạo kinh doanh. Chương trình đào tạo chuyển đổi năng lực cùng AI cho doanh nghiệp và đồng hành phát triển năng lực cho phụ nữ đi làm.">
-<meta property="og:title" content="Nguyễn Minh Quyên – Đào tạo chuyển đổi AI & phát triển năng lực phụ nữ">
-<meta property="og:description" content="Bắt đầu từ vấn đề kinh doanh, truy ngược về con người. Chương trình AI cho đội ngũ và đồng hành cùng chị em đi làm.">
-<meta property="og:url" content="https://qynn.io.vn">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<title>M Capability Lab | Nâng tầm năng lực nhân sự cho doanh nghiệp nhỏ</title>
+<meta name="description" content="M Capability Lab đồng hành cùng doanh nghiệp nhỏ và startup Việt Nam nâng tầm năng lực nhân sự, bắt đầu từ bài toán kinh doanh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Fraunces:opsz,wght@9..144,600&display=swap">
 <style>
 :root{
-  --bg:#F2F4F6; --paper:#FFFFFF; --ink:#1B2438; --muted:#55607A; --line:#D7DCE4;
-  --jade:#16705F; --jade-soft:#DDEEE9; --rose:#A9466A; --rose-soft:#F5E3EA;
-  --serif:"Fraunces", "Noto Serif", Georgia, "Times New Roman", serif;
-  --sans:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --turq:#169A70; --turq-deep:#0F7A58; --violet:#169A70; --violet-deep:#0F7A58; --violet-tint:#E3F4EC; --violet-soft:#7FD3B0; --violet-glow:22,154,112; --turq-light:#9EDCC4; --turq-bright:#22B886;
+  --navy:#2B2D2F; --navy-2:#232527; --navy-line:#3E4245;
+  --ink:#2B2D2F; --muted:#5A5D60; --bg:#FFFFFF; --soft:#F4F6F5; --tint:#EAF5F0; --line:#DDE3E0; --card:#FFFFFF;
+  --f-body:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif; --f-brand:'Plus Jakarta Sans','Be Vietnam Pro',system-ui,sans-serif; --f-head:'Fraunces',Georgia,'Times New Roman',serif;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121826; --paper:#1A2233; --ink:#E9EDF4; --muted:#A3AEC4; --line:#2E3a52;
-    --jade:#5CC3AE; --jade-soft:#17322E; --rose:#E58AAB; --rose-soft:#3A2030;
-  }
+  :root:not([data-theme="light"]){ --ink:#ECEEEC; --muted:#A9AEAB; --bg:#18191B; --soft:#202224; --tint:#1D2A25; --line:#34373A; --card:#1F2123; --turq-deep:#7FD3B0; --violet-deep:#9EDCC4; --violet-tint:#1D2A25; }
 }
-:root[data-theme="dark"]{
-  --bg:#121826; --paper:#1A2233; --ink:#E9EDF4; --muted:#A3AEC4; --line:#2E3a52;
-  --jade:#5CC3AE; --jade-soft:#17322E; --rose:#E58AAB; --rose-soft:#3A2030;
-}
+:root[data-theme="dark"]{ --ink:#ECEEEC; --muted:#A9AEAB; --bg:#18191B; --soft:#202224; --tint:#1D2A25; --line:#34373A; --card:#1F2123; --turq-deep:#7FD3B0; --violet-deep:#9EDCC4; --violet-tint:#1D2A25; }
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px); scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
-img{max-width:100%}
-a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--jade);outline-offset:3px;border-radius:4px}
-.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
-h2{font-size:clamp(1.9rem,1.2rem + 2.4vw,2.9rem);max-width:22ch}
-h3{font-size:1.35rem;font-weight:600}
-p{margin:0 0 1em;max-width:68ch}
-section{padding:clamp(4rem,8vw,7rem) 0}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased}
+a{color:var(--turq-deep)}
+:focus-visible{outline:3px solid var(--turq-bright); outline-offset:3px; border-radius:3px}
+.wrap{width:min(1160px, 100% - 40px); margin-inline:auto}
+h1,h2,h3,h4{margin:0; line-height:1.3; font-weight:700; letter-spacing:-0.005em}
+h1,h2{font-family:var(--f-head); font-weight:600; letter-spacing:-0.01em; line-height:1.22}
+h1{font-size:clamp(1.6rem, 2.6vw, 2.15rem)}
+h2{font-size:clamp(1.25rem, 1.8vw, 1.55rem)}
+h3{font-size:1rem}
+p{margin:0}
+.muted{color:var(--muted)}
+.label{display:block; font-size:0.82rem; font-weight:600; color:var(--turq-deep); margin-bottom:10px}
+.sec{padding:76px 0; border-top:1px solid var(--line)}
+.sec.soft{background:var(--soft)}
+.sec-head{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; margin-bottom:40px}
+.sec-head p{color:var(--muted)}
+@media (max-width: 860px){ .sec-head{grid-template-columns:1fr; gap:14px} }
 
-/* Header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
-.brand{font-family:var(--serif);font-size:1.2rem;text-decoration:none;font-weight:600}
-nav ul{list-style:none;display:flex;gap:1.6rem;margin:0;padding:0;font-size:.95rem}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--ink)}
-.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.98rem;padding:.8rem 1.35rem;border-radius:999px;background:var(--ink);color:var(--bg);border:2px solid var(--ink)}
-.btn.ghost{background:transparent;color:var(--ink)}
-.btn.sm{padding:.5rem 1rem;font-size:.9rem}
-@media (max-width:820px){nav ul{display:none}}
+/* header */
+header{position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:var(--bg); border-bottom:1px solid var(--line)}
+.bar{display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:72px}
+.logo{display:flex; text-decoration:none}
+.logo svg{height:40px; width:auto; display:block; overflow:visible}
+.lg-badge{fill:var(--turq)} .lg-name{fill:var(--ink)} .lg-desc{fill:var(--turq-deep)}
+nav ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
+nav a{color:var(--ink); text-decoration:none; font-size:0.88rem; font-weight:500; white-space:nowrap}
+nav a:hover{color:var(--turq)}
+.btn{display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 22px; border-radius:6px; font:600 0.9rem/1.3 var(--f-body); text-align:center; padding-top:8px; padding-bottom:8px; text-decoration:none; border:1.5px solid transparent; cursor:pointer}
+.btn-primary{background:var(--turq); color:#fff}
+.btn-primary:hover{background:var(--turq-deep); color:#fff}
+.btn-dark{background:var(--navy); color:#22B886}
+.btn-dark:hover{background:#151617; color:#2BC48F}
+:root[data-theme="dark"] .btn-dark{background:#ECEEEC; color:#0F7A58}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn-dark{background:#ECEEEC; color:#0F7A58} }
+.btn-line{border-color:var(--line); color:var(--ink); background:var(--card)}
+.btn-line:hover{border-color:var(--turq); color:var(--turq-deep)}
+.btn-sm{min-height:42px; padding:0 18px; font-size:0.9rem}
+nav a.active{color:var(--turq-deep); box-shadow:inset 0 -2px 0 var(--turq)}
+.m-only{display:none}
+@media (max-width: 1100px){
+  .bar{flex-wrap:wrap; min-height:0; padding-top:10px; gap:10px 16px}
+  nav{order:3; width:calc(100% + 40px); margin:0 -20px; padding:0 20px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; border-top:1px solid var(--line)}
+  nav::-webkit-scrollbar{display:none}
+  nav ul{gap:22px; white-space:nowrap}
+  nav a{display:inline-flex; align-items:center; min-height:44px; font-size:0.88rem}
+  .m-only{display:list-item}
+}
+.hdr-cta{white-space:nowrap; flex-shrink:0; padding:0 16px}
+.hdr-cta .s{display:none}
+@media (max-width: 1280px){ .hdr-cta .l{display:none} .hdr-cta .s{display:inline} }
+@media (max-width: 420px){ .logo svg{height:29px} .hdr-cta{padding:0 12px; font-size:0.84rem; min-height:40px} }
 
-/* Hero */
-.hero{padding:clamp(4rem,10vw,8rem) 0 clamp(3rem,6vw,5rem)}
-.hero h1{font-size:clamp(2.6rem,1.4rem + 5.2vw,5.4rem);letter-spacing:-.015em;max-width:15ch}
-.hero h1 span{display:block;color:var(--muted)}
-.hero .lede{font-size:1.2rem;color:var(--muted);margin-top:2rem;max-width:56ch}
-.hero .who{margin-top:2.5rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-.hero .who strong{font-weight:600}
-.paths{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3.5rem}
-.path{display:block;text-decoration:none;padding:1.6rem 1.8rem;border-radius:20px;border:1px solid var(--line);background:var(--paper)}
-.path.biz{border-left:6px solid var(--jade)}
-.path.her{border-left:6px solid var(--rose)}
-.path b{display:block;font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-bottom:.3rem}
-.path span{color:var(--muted);font-size:.98rem}
-.path:hover{border-color:var(--ink)}
-@media (max-width:700px){.paths{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:no-preference){
-  .hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-  .hero h1 span{animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) both}
-  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+/* hero */
+.hero{padding:64px 0 56px; background:linear-gradient(180deg, var(--tint) 0%, var(--bg) 100%)}
+.hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center}
+.hero h1{max-width:20ch}
+.hero .intro{margin-top:18px; font-size:0.98rem; color:var(--muted); max-width:58ch}
+.cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+.photo{background:var(--soft); border:1px dashed var(--turq); border-radius:8px; display:grid; place-items:center; text-align:center; color:var(--muted); font-size:0.85rem; padding:16px}
+.hero .photo{aspect-ratio:4/3}
+.hero-strip{display:grid; grid-template-columns:repeat(3,1fr); margin-top:48px; border-top:1px solid var(--line)}
+.hero-strip div{padding:18px 20px 0 0}
+.hero-strip b{display:block; font-size:0.95rem}
+.hero-strip span{font-size:0.88rem; color:var(--muted)}
+@media (max-width: 860px){ .hero-grid{grid-template-columns:1fr; gap:32px} .hero-strip{grid-template-columns:1fr} }
+
+/* context */
+.ctx{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--card)}
+.ctx > div{padding:28px}
+.ctx > div + div{border-left:1px solid var(--line)}
+.ctx h3{margin-bottom:10px}
+.ctx p{font-size:0.94rem; color:var(--muted)}
+.ctx .us{background:var(--navy); color:#fff}
+.ctx .us p{color:#C9D7DF}
+.ctx .us h3{color:#fff}
+.ctx .tag{font-size:0.78rem; font-weight:600; margin-bottom:8px; display:block; color:var(--turq-deep)}
+.ctx .us .tag{color:var(--turq-light)}
+@media (max-width: 860px){ .ctx{grid-template-columns:1fr} .ctx > div + div{border-left:0; border-top:1px solid var(--line)} }
+
+/* solutions */
+.sol{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+.sol-card{border:1px solid var(--line); border-radius:8px; background:var(--card); overflow:hidden}
+.sol-top{padding:24px 26px; border-bottom:1px solid var(--line)}
+.sol-top .nm{font-family:var(--f-brand); font-weight:700; font-size:1.2rem; letter-spacing:0.02em}
+.sol-card.ai .sol-top{border-top:4px solid var(--turq)}
+.sol-card.her .sol-top{border-top:4px solid var(--navy)}
+:root[data-theme="dark"] .sol-card.her .sol-top{border-top-color:var(--turq-light)}
+.sol-top p{color:var(--muted); font-size:0.93rem; margin-top:4px}
+.sol ul{list-style:none; margin:0; padding:0}
+.sol li{display:grid; grid-template-columns:96px 1fr; gap:14px; padding:14px 26px; border-top:1px solid var(--line)}
+.sol li:first-child{border-top:0}
+.sol .code{font-family:var(--f-brand); font-weight:600; font-size:0.85rem; color:var(--turq-deep); padding-top:1px}
+.sol .t{font-weight:600; font-size:0.95rem}
+.sol .p{font-size:0.88rem; color:var(--muted)}
+.tna{margin-top:22px; font-size:0.92rem; color:var(--muted); border-left:3px solid var(--turq); padding-left:14px}
+@media (max-width: 860px){ .sol{grid-template-columns:1fr} }
+
+/* method */
+.method{display:grid; grid-template-columns:repeat(4,1fr); gap:0; counter-reset:m; border-top:2px solid var(--navy)}
+.method li{list-style:none; counter-increment:m; padding:22px 22px 0 0}
+.mmodel{display:grid; grid-template-columns:minmax(200px,300px) 1fr; gap:56px; align-items:center; margin-bottom:64px}
+.mm-mark svg{width:100%; height:auto; display:block}
+.mm-cards{display:grid; gap:12px}
+.mm-card{border:1px solid var(--line); border-left:3px solid var(--turq); border-radius:6px; padding:16px 20px; background:var(--card)}
+.mm-card h3{font-size:0.95rem; margin-bottom:4px}
+.mm-card p{font-size:0.86rem; color:var(--muted); margin:0}
+.mm-lab{margin:8px 0 0; font-size:0.86rem; color:var(--muted)}
+.mm-lab b{color:var(--ink); font-weight:600}
+.m-steps-head{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; margin-bottom:8px}
+.m-steps-head h3{font-size:1.05rem}
+.m-steps-head p{margin:0; font-size:0.9rem; color:var(--muted)}
+@media (max-width: 820px){ .mmodel{grid-template-columns:1fr; gap:28px} .mm-mark{max-width:200px} .m-steps-head{grid-template-columns:1fr; gap:8px} }
+.method li::before{content:"0" counter(m); display:block; font-family:var(--f-brand); font-weight:700; font-size:0.95rem; color:var(--turq-deep); margin-bottom:10px}
+.method h3{margin-bottom:6px}
+.method p{font-size:0.9rem; color:var(--muted)}
+.method{padding:0; margin:0}
+.principles{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px}
+.pr{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:22px}
+.pr h3{font-size:0.98rem; margin-bottom:6px}
+.pr p{font-size:0.9rem; color:var(--muted)}
+@media (max-width: 860px){ .method{grid-template-columns:1fr 1fr; row-gap:18px} .principles{grid-template-columns:1fr} }
+@media (max-width: 520px){ .method{grid-template-columns:1fr} }
+
+/* diagnostic */
+.dark-band{background:var(--navy); color:#fff; border-top:0; background-image:radial-gradient(700px 380px at 100% 0%, rgba(var(--violet-glow),.34) 0%, transparent 70%)}
+.dark-band .sec-head p{color:#C3D2DB}
+.dark-band .label{color:var(--violet-soft)}
+.dark-band .diag-card{background:var(--navy-2); border-color:var(--navy-line); border-left-color:var(--violet-soft)}
+.dark-band .diag-facts b{color:var(--violet-soft)}
+.dark-band .diag-card ul{color:#C3D2DB}
+.dark-band .free{background:var(--violet); color:#fff}
+.diag-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:start}
+.diag-card{border:1px solid var(--line); border-left:4px solid var(--violet); border-radius:8px; background:var(--card); padding:26px}
+.diag-facts{display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin:22px 0}
+.diag-facts b{display:block; font-size:0.8rem; color:var(--violet-deep); font-weight:600}
+.diag-facts span{font-size:0.95rem; font-weight:600}
+.diag-card h3{font-size:0.98rem; margin-bottom:8px}
+.diag-card ul{margin:0; padding-left:18px; color:var(--muted); font-size:0.92rem}
+.diag-card li + li{margin-top:5px}
+.free{display:inline-block; padding:3px 12px; border-radius:999px; background:var(--violet-tint); color:var(--violet-deep); font-weight:700; font-size:0.8rem; margin-bottom:12px}
+@media (max-width: 860px){ .diag-grid{grid-template-columns:1fr} }
+
+/* sectors */
+.sectors{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.sector{border:1px solid var(--line); border-radius:8px; padding:24px; background:var(--card)}
+.sector h3{margin-bottom:8px}
+.sector p{font-size:0.9rem; color:var(--muted)}
+.sector .fit{margin-top:14px; font-size:0.84rem; color:var(--turq-deep); font-weight:600}
+@media (max-width: 860px){ .sectors{grid-template-columns:1fr} }
+
+/* startups */
+.startups{background:var(--navy); color:#fff; padding:80px 0}
+.startups .muted, .startups .sec-head p{color:#C3D2DB}
+.startups .label{color:var(--violet-soft)}
+.prog{font-family:var(--f-brand); font-weight:700; font-size:clamp(1.5rem,2.4vw,1.95rem); line-height:1.1}
+.prog-sub{color:var(--turq-light); margin-top:6px}
+.facts{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin:36px 0 48px; border:1px solid var(--navy-line); border-radius:8px}
+.facts div{padding:18px 22px}
+.facts div + div{border-left:1px solid var(--navy-line)}
+.facts b{display:block; font-size:0.95rem}
+.facts span{font-size:0.88rem; color:#C3D2DB}
+.pk-row{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.pk{border:1px solid var(--navy-line); border-radius:8px; padding:26px; background:var(--navy-2)}
+.pk.elite{border-color:var(--violet-soft); box-shadow:0 0 0 1px var(--violet-soft), 0 12px 44px -16px rgba(var(--violet-glow),.7)}
+.chip{display:inline-block; margin-left:8px; padding:2px 10px; border-radius:999px; background:var(--violet); color:#fff; font-size:0.72rem; font-weight:600; vertical-align:middle}
+.pk .nm{font-weight:700; font-size:1.1rem}
+.pk .val{font-family:var(--f-brand); font-weight:700; font-size:1.4rem; color:var(--turq-light); margin:8px 0 2px}
+.pk .who{font-size:0.88rem; color:#C3D2DB}
+.pk ul{margin:16px 0 0; padding-left:18px; font-size:0.9rem; color:#DCE6EC}
+.pk li + li{margin-top:5px}
+.benefits{display:grid; grid-template-columns:1fr 1fr; gap:0 36px; margin-top:44px}
+.bf{display:grid; grid-template-columns:40px 1fr; gap:12px; padding:14px 0; border-top:1px solid var(--navy-line)}
+.bf .n{font-family:var(--f-brand); font-weight:800; color:var(--turq-light)}
+.bf h4{font-size:0.95rem; font-weight:600}
+.bf p{font-size:0.86rem; color:#C3D2DB}
+.bf-head{grid-column:1/-1; margin:26px 0 4px; font-size:0.9rem; font-weight:600; color:var(--turq-light)}
+.table-wrap{overflow-x:auto; margin-top:44px; border:1px solid var(--navy-line); border-radius:8px}
+table{border-collapse:collapse; width:100%; min-width:600px}
+th,td{padding:12px 16px; border-bottom:1px solid var(--navy-line); font-size:0.88rem; text-align:left}
+td.c,th.c{text-align:center}
+thead th{background:var(--navy-2); font-weight:700}
+.yes{color:var(--turq-light); font-weight:700}
+tr.val td{font-weight:700; background:var(--navy-2)}
+tbody tr:last-child td{border-bottom:0}
+.duo{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px}
+.duo > div{border:1px solid var(--navy-line); border-radius:8px; padding:22px}
+.duo h3{margin-bottom:8px}
+.duo ul{margin:0; padding-left:18px; font-size:0.9rem; color:#C3D2DB}
+.duo li + li{margin-top:5px}
+.steps{display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin:44px 0 0; padding:0; counter-reset:s}
+.steps li{list-style:none; counter-increment:s; border-top:2px solid var(--turq); padding-top:14px}
+.steps li::before{content:"Bước " counter(s); display:block; font-size:0.78rem; font-weight:600; color:var(--turq-light); margin-bottom:4px}
+.steps b{display:block; font-size:0.92rem}
+.steps span{font-size:0.85rem; color:#C3D2DB}
+.fine{margin-top:32px; font-size:0.86rem; color:#C3D2DB; max-width:80ch}
+@media (max-width: 860px){
+  .facts{grid-template-columns:1fr} .facts div + div{border-left:0; border-top:1px solid var(--navy-line)}
+  .pk-row,.benefits,.duo{grid-template-columns:1fr} .steps{grid-template-columns:1fr 1fr}
 }
 
-/* Proof strip */
-.proof{border-block:1px solid var(--line);background:var(--paper);padding:2.2rem 0}
-.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.proof li{font-size:.95rem;color:var(--muted)}
-.proof li b{display:block;font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);line-height:1.1}
-@media (max-width:820px){.proof ul{grid-template-columns:1fr 1fr}}
+/* engagement + founder */
+.models{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.model{border:1px solid var(--line); border-radius:8px; padding:26px; background:var(--card)}
+.model h3{margin-bottom:8px}
+.model p{font-size:0.92rem; color:var(--muted)}
+.model a{display:inline-block; margin-top:14px; font-weight:600; font-size:0.92rem}
+.founder{display:grid; grid-template-columns:120px 1fr auto; gap:28px; align-items:center; border:1px solid var(--line); border-radius:8px; padding:24px; background:var(--card)}
+.founder .photo{width:120px; height:120px; border-radius:50%; aspect-ratio:1; font-size:0.72rem; padding:8px}
+.founder h3{font-size:1.02rem}
+.founder .role{font-size:0.88rem; color:var(--turq-deep); font-weight:600; margin:2px 0 8px}
+.founder p.bio{font-size:0.9rem; color:var(--muted); max-width:70ch}
+.fstats{display:grid; grid-template-columns:repeat(2,auto); gap:10px 26px}
+.fstats b{display:block; font-family:var(--f-brand); font-weight:700; font-size:1.1rem; color:var(--turq-deep); line-height:1.1}
+.fstats span{font-size:0.78rem; color:var(--muted)}
+@media (max-width: 860px){ .models{grid-template-columns:1fr} .founder{grid-template-columns:1fr} .founder .photo{width:96px; height:96px} }
 
-/* Belief */
-.belief{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:start}
-.belief blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.4rem,1rem + 1.4vw,2rem);line-height:1.35;border-left:3px solid var(--rose);padding-left:1.4rem}
-@media (max-width:820px){.belief{grid-template-columns:1fr}}
+/* faq */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line); padding:4px 0}
+.faq summary{cursor:pointer; list-style:none; padding:16px 36px 16px 0; font-weight:600; position:relative; min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+"; position:absolute; right:4px; top:12px; font-size:1.3rem; color:var(--turq-deep)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 16px; color:var(--muted); font-size:0.94rem; max-width:80ch}
 
-/* Services */
-.svc-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.svc-head p{color:var(--muted);margin:0}
-.tint-biz{background:var(--jade-soft)}
-.tint-her{background:var(--rose-soft)}
-.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.prog{background:var(--paper);border-radius:18px;padding:1.8rem;display:flex;flex-direction:column}
-.prog .fmt{font-size:.88rem;color:var(--muted);margin-bottom:.9rem}
-.prog h3{margin-bottom:.8rem}
-.prog ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.97rem}
-.prog li{margin-bottom:.35rem}
-.prog .for{margin-top:auto;padding-top:1.2rem;font-size:.92rem;border-top:1px solid var(--line)}
-.tint-biz .prog .fmt{color:var(--jade)} .tint-her .prog .fmt{color:var(--rose)}
-.pains{columns:2;column-gap:2.5rem;padding-left:1.1rem;margin:0 0 3rem}
-.pains li{break-inside:avoid;margin-bottom:.7rem}
-@media (max-width:900px){.programs{grid-template-columns:1fr}.pains{columns:1}}
+/* form */
+form,.done{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:30px; max-width:860px}
+fieldset{border:0; margin:0 0 26px; padding:0}
+legend{font-weight:700; font-size:1rem; margin-bottom:12px}
+.fields{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.field{display:flex; flex-direction:column; gap:5px}
+.field.full{grid-column:1/-1}
+label{font-weight:500; font-size:0.9rem}
+.req{color:var(--turq-deep)}
+input,select,textarea{font:inherit; font-size:16px; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:11px 13px; min-height:46px; width:100%}
+textarea{min-height:110px; resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--turq); outline:none; box-shadow:0 0 0 3px rgba(22,154,112,.22)}
+.consent{display:grid; grid-template-columns:22px 1fr; gap:12px; font-size:0.86rem; color:var(--muted); margin-bottom:22px}
+.consent input{width:20px; height:20px; min-height:0; margin-top:3px; accent-color:var(--turq)}
+.err{display:none; color:#B3261E; font-size:0.88rem; margin-top:10px}
+.pnote{font-size:0.8rem; color:var(--muted); margin-top:12px}
+.done{display:none}
+.done h3{color:var(--turq-deep); margin-bottom:6px}
+@media (max-width: 640px){ .fields{grid-template-columns:1fr} form{padding:20px} }
 
-/* Process */
-.steps{list-style:none;counter-reset:s;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:1.2rem}
-.steps li::before{content:counter(s);font-family:var(--serif);font-size:2.4rem;line-height:1;display:block;margin-bottom:.8rem;color:var(--jade)}
-.steps h3{font-size:1.15rem;margin-bottom:.5rem}
-.steps p{color:var(--muted);font-size:.97rem}
-@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
-@media (max-width:560px){.steps{grid-template-columns:1fr}}
-
-/* Experience */
-.exp{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,6vw,5rem)}
-.timeline{list-style:none;margin:0;padding:0}
-.timeline li{display:grid;grid-template-columns:7.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
-.timeline .yr{color:var(--muted);font-size:.95rem;padding-top:.15rem}
-.timeline h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:.35rem}
-.timeline p{color:var(--muted);font-size:.96rem;margin:0}
-.creds{margin-top:2rem;padding-left:1.1rem;color:var(--muted)}
-@media (max-width:820px){.exp{grid-template-columns:1fr}.timeline li{grid-template-columns:1fr;gap:.2rem}}
-
-/* Contact */
-.contact{background:var(--ink);color:var(--bg)}
-.contact h2{max-width:20ch}
-.contact p{color:color-mix(in srgb,var(--bg) 75%,transparent)}
-.contact .btn{background:var(--bg);color:var(--ink);border-color:var(--bg)}
-.contact .btn.ghost{background:transparent;color:var(--bg)}
-.ways{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
-.contact dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.5rem;margin:3rem 0 0;font-size:.98rem}
-.contact dt{opacity:.65}
-.contact dd{margin:0}
-footer{padding:2rem 0;font-size:.88rem;color:var(--muted)}
+/* footer */
+footer{background:var(--navy); color:#fff; padding:52px 0 36px}
+.foot{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px}
+.foot .logo svg{height:52px; max-width:100%}
+.foot .lg-badge{fill:var(--turq-bright)} .foot .lg-name{fill:#fff} .foot .lg-desc{fill:var(--turq-light)}
+.sig{margin-top:18px; font-family:var(--f-head); font-weight:600; font-size:1.05rem; color:#fff}
+.foot h4{font-size:0.88rem; margin-bottom:10px; color:var(--turq-light); font-weight:600}
+.foot ul{list-style:none; margin:0; padding:0; font-size:0.9rem; color:#C3D2DB}
+.foot li + li{margin-top:6px}
+.foot a{color:#fff; text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.copy{margin-top:40px; padding-top:18px; border-top:1px solid var(--navy-line); font-size:0.8rem; color:#8FA6B4}
+@media (max-width: 760px){ .foot{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#">Minh Quyên</a>
-    <nav aria-label="Chính">
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="M Capability Lab, Nâng tầm năng lực nhân sự, về đầu trang">
+      <svg viewBox="0 0 3758 578" aria-hidden="true"><defs><clipPath id="kh"><rect x="0" y="0" width="1000" height="785"/></clipPath><linearGradient id="ah" x1="330" y1="270" x2="250" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient><linearGradient id="bh" x1="420" y1="520" x2="505" y2="770" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#169A70"/><stop offset="1" stop-color="#0A5A41"/></linearGradient><linearGradient id="ch" x1="715" y1="275" x2="805" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient></defs><g transform="translate(-130 -235)" clip-path="url(#kh)"><polygon points="143,785 277,785 392,248 282,248" fill="url(#ah)" stroke="url(#ah)" stroke-width="26" stroke-linejoin="round"/><polygon points="282,248 437,248 570,785 448,785" fill="url(#bh)" stroke="url(#bh)" stroke-width="26" stroke-linejoin="round"/><polygon points="600,248 722,248 877,785 748,785" fill="url(#ch)" stroke="url(#ch)" stroke-width="26" stroke-linejoin="round"/><polygon points="448,785 577,785 722,248 588,248" fill="#169A70" stroke="#169A70" stroke-width="26" stroke-linejoin="round"/></g><path class="lg-name" d="M1057.1236330498177 321.19532199270964Q1024.1269744835965 321.19532199270964 995.9336269744836 309.08262454435Q967.7402794653706 296.9699270959903 947.0651579586877 275.45944714459296Q926.3900364520049 253.94896719319564 914.6950182260025 224.71142162818956Q903.0 195.47387606318347 903.0 160.3888213851762Q903.0 125.72144592952614 914.4861786148238 96.27506075334145Q925.9723572296476 66.82867557715676 946.8563183475092 45.31819562575943Q967.7402794653706 23.8077156743621 995.724787363305 11.90385783718105Q1023.7092952612394 0.0 1057.1236330498177 0.0Q1090.120291616039 0.0 1116.2252430133658 11.27733900364521Q1142.3301944106925 22.55467800729042 1160.2904009720532 40.7237241798299Q1178.2506075334143 58.89277035236938 1186.1865127582018 80.1944106925881L1141.9125151883354 101.0783718104496Q1131.888213851762 76.01761846901582 1109.9600546780075 60.354647630619695Q1088.0318955042528 44.691676792223575 1057.1236330498177 44.691676792223575Q1026.2153705953829 44.691676792223575 1002.4076549210207 59.31044957472662Q978.5999392466586 73.92922235722966 965.4430437424058 99.8253341433779Q952.2861482381531 125.72144592952614 952.2861482381531 160.3888213851762Q952.2861482381531 195.05619684082626 965.4430437424058 221.16114823815312Q978.5999392466586 247.26609963547997 1002.4076549210207 261.6760328068044Q1026.2153705953829 276.0859659781288 1057.1236330498177 276.0859659781288Q1088.0318955042528 276.0859659781288 1109.9600546780075 260.6318347509113Q1131.888213851762 245.17770352369382 1141.9125151883354 220.11695018226004L1186.1865127582018 241.00091130012152Q1178.2506075334143 261.884872417983 1160.2904009720532 280.2627582017011Q1142.3301944106925 298.6406439854192 1116.2252430133658 309.9179829890644Q1090.120291616039 321.19532199270964 1057.1236330498177 321.19532199270964Z M1295.6184690157959 321.19532199270964Q1272.6461117861481 321.19532199270964 1255.3124240583231 313.05057715674366Q1237.9787363304981 304.9058323207777 1228.3721142162817 290.49589914945324Q1218.7654921020655 276.0859659781288 1218.7654921020655 256.455042527339Q1218.7654921020655 238.07715674362092 1226.9102369380316 223.45838396111787Q1235.0549817739975 208.83961117861483 1252.179829890644 198.8153098420413Q1269.3046780072905 188.7910085054678 1295.2007897934386 184.61421628189552L1373.7244835965978 171.6661603888214V208.83961117861483L1304.3897326852978 220.9523086269745Q1285.5941676792222 224.29374240583235 1276.8229040097203 232.85616646415554Q1268.0516403402187 241.41859052247875 1268.0516403402187 254.78432563791011Q1268.0516403402187 267.73238153098424 1277.8671020656136 275.87712636695016Q1287.6825637910085 284.02187120291615 1303.136695018226 284.02187120291615Q1322.3499392466586 284.02187120291615 1336.759872417983 275.66828675577153Q1351.1698055893073 267.314702308627 1359.1057108140947 253.3224483596598Q1367.041616038882 239.3301944106926 1367.041616038882 222.2053462940462V164.14793438639126Q1367.041616038882 147.4407654921021 1354.7200789793437 136.78994532199272Q1342.3985419198057 126.13912515188338 1321.9322600243013 126.13912515188338Q1303.136695018226 126.13912515188338 1289.1444410692588 135.95458687727827Q1275.1521871202915 145.77004860267317 1268.469319562576 161.22417982989066L1229.2074726609962 141.59325637910086Q1235.4726609963548 124.88608748481167 1249.6737545565006 112.14687120291617Q1263.8748481166465 99.40765492102068 1282.8792527339006 92.30710814094778Q1301.8836573511544 85.20656136087487 1323.185297691373 85.20656136087487Q1349.9167679222357 85.20656136087487 1370.5918894289184 95.23086269744837Q1391.2670109356013 105.25516403402187 1402.7531895504253 123.00653098420413Q1414.239368165249 140.7578979343864 1414.239368165249 164.14793438639126V316.18317132442286H1369.1300121506683V275.2506075334144L1378.7366342648845 276.50364520048606Q1370.8007290400972 290.2870595382746 1358.4791919805589 300.3113608748481Q1346.1576549210206 310.33566221142166 1330.4946840826246 315.76549210206565Q1314.8317132442285 321.19532199270964 1295.6184690157959 321.19532199270964Z M1469.3730255164035 399.7190157958688V90.21871202916162H1514.4823815309842V136.99878493317135L1509.0525516403402 126.13912515188338Q1521.582928311057 106.92588092345079 1542.4668894289184 96.06622114216283Q1563.35085054678 85.20656136087487 1590.0823207776427 85.20656136087487Q1622.2436208991494 85.20656136087487 1647.930893074119 100.66069258809236Q1673.6181652490886 116.11482381530985 1688.4457776427703 142.84629404617255Q1703.273390036452 169.57776427703524 1703.273390036452 202.9921020656136Q1703.273390036452 236.406439854192 1688.4457776427703 263.1379100850547Q1673.6181652490886 289.8693803159174 1648.1397326852975 305.5323511543135Q1622.6613001215067 321.19532199270964 1590.0823207776427 321.19532199270964Q1563.7685297691373 321.19532199270964 1542.25804981774 310.33566221142166Q1520.7475698663427 299.4760024301337 1509.0525516403402 279.0097205346294L1516.5707776427703 270.2384568651276V399.7190157958688ZM1585.4878493317133 277.3390036452005Q1605.5364520048602 277.3390036452005 1620.9905832320778 267.7323815309842Q1636.4447144592953 258.12575941676795 1645.4248177399759 241.20975091130015Q1654.4049210206563 224.29374240583235 1654.4049210206563 202.9921020656136Q1654.4049210206563 181.6904617253949 1645.4248177399759 164.9832928311057Q1636.4447144592953 148.27612393681653 1620.9905832320778 138.66950182260024Q1605.5364520048602 129.06287970838397 1585.4878493317133 129.06287970838397Q1565.8569258809234 129.06287970838397 1550.1939550425273 138.66950182260024Q1534.5309842041313 148.27612393681653 1525.5508809234507 164.9832928311057Q1516.5707776427703 181.6904617253949 1516.5707776427703 202.9921020656136Q1516.5707776427703 224.29374240583235 1525.5508809234507 241.20975091130015Q1534.5309842041313 258.12575941676795 1550.1939550425273 267.7323815309842Q1565.8569258809234 277.3390036452005 1585.4878493317133 277.3390036452005Z M1816.8821385176186 321.19532199270964Q1793.9097812879709 321.19532199270964 1776.5760935601459 313.05057715674366Q1759.2424058323209 304.9058323207777 1749.6357837181044 290.49589914945324Q1740.0291616038883 276.0859659781288 1740.0291616038883 256.455042527339Q1740.0291616038883 238.07715674362092 1748.1739064398544 223.45838396111787Q1756.3186512758202 208.83961117861483 1773.4434993924667 198.8153098420413Q1790.5683475091132 188.7910085054678 1816.4644592952613 184.61421628189552L1894.9881530984205 171.6661603888214V208.83961117861483L1825.6534021871205 220.9523086269745Q1806.857837181045 224.29374240583235 1798.086573511543 232.85616646415554Q1789.3153098420414 241.41859052247875 1789.3153098420414 254.78432563791011Q1789.3153098420414 267.73238153098424 1799.1307715674363 275.87712636695016Q1808.9462332928313 284.02187120291615 1824.4003645200487 284.02187120291615Q1843.6136087484813 284.02187120291615 1858.0235419198057 275.66828675577153Q1872.43347509113 267.314702308627 1880.3693803159174 253.3224483596598Q1888.3052855407047 239.3301944106926 1888.3052855407047 222.2053462940462V164.14793438639126Q1888.3052855407047 147.4407654921021 1875.9837484811665 136.78994532199272Q1863.6622114216284 126.13912515188338 1843.195929526124 126.13912515188338Q1824.4003645200487 126.13912515188338 1810.4081105710816 135.95458687727827Q1796.4158566221142 145.77004860267317 1789.7329890643987 161.22417982989066L1750.471142162819 141.59325637910086Q1756.7363304981775 124.88608748481167 1770.9374240583234 112.14687120291617Q1785.1385176184692 99.40765492102068 1804.1429222357233 92.30710814094778Q1823.1473268529771 85.20656136087487 1844.4489671931958 85.20656136087487Q1871.1804374240585 85.20656136087487 1891.8555589307412 95.23086269744837Q1912.530680437424 105.25516403402187 1924.016859052248 123.00653098420413Q1935.5030376670718 140.7578979343864 1935.5030376670718 164.14793438639126V316.18317132442286H1890.393681652491V275.2506075334144L1900.0003037667072 276.50364520048606Q1892.06439854192 290.2870595382746 1879.7428614823816 300.3113608748481Q1867.4213244228433 310.33566221142166 1851.7583535844474 315.76549210206565Q1836.0953827460512 321.19532199270964 1816.8821385176186 321.19532199270964Z M2111.3459902794657 321.19532199270964Q2085.03219927096 321.19532199270964 2063.5217193195626 310.33566221142166Q2042.0112393681654 299.4760024301337 2030.316221142163 279.0097205346294L2035.746051032807 270.2384568651276V316.18317132442286H1990.6366950182262V0.0H2037.834447144593V136.99878493317135L2030.316221142163 126.13912515188338Q2042.8465978128797 106.92588092345079 2063.7305589307416 96.06622114216283Q2084.614520048603 85.20656136087487 2111.3459902794657 85.20656136087487Q2143.507290400972 85.20656136087487 2169.1945625759417 100.66069258809236Q2194.8818347509114 116.11482381530985 2209.709447144593 142.84629404617255Q2224.5370595382747 169.57776427703524 2224.5370595382747 202.9921020656136Q2224.5370595382747 236.406439854192 2209.709447144593 263.1379100850547Q2194.8818347509114 289.8693803159174 2169.4034021871203 305.5323511543135Q2143.9249696233296 321.19532199270964 2111.3459902794657 321.19532199270964ZM2106.751518833536 277.3390036452005Q2126.800121506683 277.3390036452005 2142.2542527339006 267.7323815309842Q2157.708383961118 258.12575941676795 2166.6884872417986 241.20975091130015Q2175.668590522479 224.29374240583235 2175.668590522479 202.9921020656136Q2175.668590522479 181.6904617253949 2166.6884872417986 164.9832928311057Q2157.708383961118 148.27612393681653 2142.2542527339006 138.66950182260024Q2126.800121506683 129.06287970838397 2106.751518833536 129.06287970838397Q2087.120595382746 129.06287970838397 2071.45762454435 138.66950182260024Q2055.794653705954 148.27612393681653 2046.8145504252734 164.9832928311057Q2037.834447144593 181.6904617253949 2037.834447144593 202.9921020656136Q2037.834447144593 224.29374240583235 2046.8145504252734 241.20975091130015Q2055.794653705954 258.12575941676795 2071.45762454435 267.7323815309842Q2087.120595382746 277.3390036452005 2106.751518833536 277.3390036452005Z M2270.48177399757 316.18317132442286V90.21871202916162H2317.679526123937V316.18317132442286ZM2270.48177399757 59.31044957472665V5.012150668286779H2317.679526123937V59.31044957472665Z M2372.8131834750916 316.18317132442286V0.0H2420.0109356014586V316.18317132442286Z M2475.144592952613 316.18317132442286V90.21871202916162H2522.34234507898V316.18317132442286ZM2475.144592952613 59.31044957472665V5.012150668286779H2522.34234507898V59.31044957472665Z M2675.2129404617262 318.6892466585662Q2639.7102065613617 318.6892466585662 2620.079283110572 298.64064398541916Q2600.448359659782 278.59204131227216 2600.448359659782 242.2539489671932V132.82199270959904H2560.7688335358453V90.21871202916162H2567.0340218712035Q2582.9058323207782 90.21871202916162 2591.67709599028 81.02976913730257Q2600.448359659782 71.84082624544351 2600.448359659782 55.96901579586881V38.426488456865115H2647.646111786149V90.21871202916162H2699.0206561360883V132.82199270959904H2647.646111786149V240.16555285540704Q2647.646111786149 251.8605710814095 2651.405224787364 260.00531591737547Q2655.1643377885794 268.15006075334145 2663.5179222357237 272.5356925880924Q2671.871506682868 276.92132442284327 2685.2372417982997 276.92132442284327Q2688.5786755771574 276.92132442284327 2692.75546780073 276.50364520048606Q2696.932260024302 276.0859659781288 2700.6913730255174 275.6682867557716V316.18317132442286Q2694.843863912516 317.01852976913733 2687.743317132443 317.85388821385175Q2680.64277035237 318.6892466585662 2675.2129404617262 318.6892466585662Z M2766.6846901579593 408.07260024301337Q2758.331105710815 408.07260024301337 2750.186360874849 406.6107229647631Q2742.0416160388827 405.1488456865128 2735.358748481167 402.2250911300122V361.7102065613609Q2740.370899149454 362.9632442284326 2747.471445929527 364.00744228432563Q2754.5719927095997 365.05164034021874 2761.2548602673155 365.05164034021874Q2780.8857837181054 365.05164034021874 2790.283566221143 356.48921628189555Q2799.6813487241807 347.9267922235723 2807.1995747266105 330.38426488456867L2822.2360267314707 296.13456865127586L2821.4006682867566 335.81409477521265L2723.663730255165 90.21871202916162H2774.2029161603896L2846.4614216281902 278.59204131227216H2829.336573511544L2901.177399756987 90.21871202916162H2952.1342648845693L2852.3089307411915 340.82624544349943Q2844.373025516404 360.87484811664643 2832.469167679223 376.1201397326853Q2820.565309842042 391.3654313487242 2804.4846597812884 399.7190157958688Q2788.404009720535 408.07260024301337 2766.6846901579593 408.07260024301337Z M3061.983900364521 316.18317132442286V5.012150668286779H3111.270048602674V272.32685297691376H3245.762758201702V316.18317132442286Z M3350.182563791009 321.19532199270964Q3327.2102065613617 321.19532199270964 3309.8765188335365 313.05057715674366Q3292.5428311057117 304.9058323207777 3282.9362089914957 290.49589914945324Q3273.3295868772793 276.0859659781288 3273.3295868772793 256.455042527339Q3273.3295868772793 238.07715674362092 3281.474331713245 223.45838396111787Q3289.619076549211 208.83961117861483 3306.743924665858 198.8153098420413Q3323.868772782504 188.7910085054678 3349.764884568652 184.61421628189552L3428.288578371811 171.6661603888214V208.83961117861483L3358.953827460511 220.9523086269745Q3340.1582624544358 224.29374240583235 3331.386998784934 232.85616646415554Q3322.6157351154325 241.41859052247875 3322.6157351154325 254.78432563791011Q3322.6157351154325 267.73238153098424 3332.4311968408274 275.87712636695016Q3342.246658566222 284.02187120291615 3357.7007897934395 284.02187120291615Q3376.914034021872 284.02187120291615 3391.3239671931965 275.66828675577153Q3405.733900364521 267.314702308627 3413.6698055893085 253.3224483596598Q3421.605710814096 239.3301944106926 3421.605710814096 222.2053462940462V164.14793438639126Q3421.605710814096 147.4407654921021 3409.2841737545577 136.78994532199272Q3396.9626366950192 126.13912515188338 3376.496354799515 126.13912515188338Q3357.7007897934395 126.13912515188338 3343.7085358444724 135.95458687727827Q3329.7162818955053 145.77004860267317 3323.0334143377895 161.22417982989066L3283.77156743621 141.59325637910086Q3290.0367557715686 124.88608748481167 3304.237849331714 112.14687120291617Q3318.43894289186 99.40765492102068 3337.4433475091137 92.30710814094778Q3356.447752126368 85.20656136087487 3377.7493924665864 85.20656136087487Q3404.480862697449 85.20656136087487 3425.155984204132 95.23086269744837Q3445.831105710815 105.25516403402187 3457.317284325639 123.00653098420413Q3468.803462940463 140.7578979343864 3468.803462940463 164.14793438639126V316.18317132442286H3423.694106925882V275.2506075334144L3433.3007290400983 276.50364520048606Q3425.364823815311 290.2870595382746 3413.043286755773 300.3113608748481Q3400.7217496962344 310.33566221142166 3385.058778857838 315.76549210206565Q3369.395808019442 321.19532199270964 3350.182563791009 321.19532199270964Z M3644.646415552856 321.19532199270964Q3618.3326245443504 321.19532199270964 3596.822144592953 310.33566221142166Q3575.311664641556 299.4760024301337 3563.6166464155535 279.0097205346294L3569.0464763061977 270.2384568651276V316.18317132442286H3523.937120291617V0.0H3571.134872417984V136.99878493317135L3563.6166464155535 126.13912515188338Q3576.1470230862706 106.92588092345079 3597.030984204132 96.06622114216283Q3617.9149453219934 85.20656136087487 3644.646415552856 85.20656136087487Q3676.807715674363 85.20656136087487 3702.4949878493326 100.66069258809236Q3728.182260024302 116.11482381530985 3743.009872417984 142.84629404617255Q3757.8374848116655 169.57776427703524 3757.8374848116655 202.9921020656136Q3757.8374848116655 236.406439854192 3743.009872417984 263.1379100850547Q3728.182260024302 289.8693803159174 3702.703827460511 305.5323511543135Q3677.22539489672 321.19532199270964 3644.646415552856 321.19532199270964ZM3640.0519441069264 277.3390036452005Q3660.1005467800737 277.3390036452005 3675.554678007291 267.7323815309842Q3691.0088092345086 258.12575941676795 3699.988912515189 241.20975091130015Q3708.9690157958694 224.29374240583235 3708.9690157958694 202.9921020656136Q3708.9690157958694 181.6904617253949 3699.988912515189 164.9832928311057Q3691.0088092345086 148.27612393681653 3675.554678007291 138.66950182260024Q3660.1005467800737 129.06287970838397 3640.0519441069264 129.06287970838397Q3620.421020656137 129.06287970838397 3604.758049817741 138.66950182260024Q3589.0950789793446 148.27612393681653 3580.1149756986642 164.9832928311057Q3571.134872417984 181.6904617253949 3571.134872417984 202.9921020656136Q3571.134872417984 224.29374240583235 3580.1149756986642 241.20975091130015Q3589.0950789793446 258.12575941676795 3604.758049817741 267.7323815309842Q3620.421020656137 277.3390036452005 3640.0519441069264 277.3390036452005Z"/><path class="lg-desc" d="M914.2773390036452 550.0V466.5476913730255H928.2612393681653L966.604191980559 523.1599331713244V466.5476913730255H981.82859963548V550.0H967.84469927096L929.5017466585663 494.4027187120292V550.0Z M1049.9146637049412 458.7663274605103 1064.2368842395706 441.6247721749696H1076.3036369734712L1090.6258575081004 458.7663274605103H1078.4463313841636L1070.3266473015392 448.84226913730254L1062.0941898288781 458.7663274605103ZM1031.4198277389632 550.0 1060.1770421982585 466.5476913730255H1080.1379322347104L1109.007920084042 550.0H1092.9940986988659L1087.017109026934 532.4073511543135H1053.4106387960712L1047.4336491241393 550.0ZM1057.808801007493 519.1000911300122H1082.6189468155123L1070.2138739115026 482.22319258809233Z M1158.5991481875253 550.0V466.5476913730255H1172.5830485520453L1210.926001164439 523.1599331713244V466.5476913730255H1226.1504088193599V550.0H1212.16650845484L1173.8235558424462 494.4027187120292V550.0Z M1317.1294710662214 551.1277339003645Q1306.6415457928313 551.1277339003645 1298.860181880316 547.5189854191981Q1291.078817967801 543.9102369380316 1285.9476287211423 537.7640871810449Q1280.8164394744838 531.6179374240584 1278.2790381986636 524.0057335965978Q1275.7416369228433 516.3935297691373 1275.7416369228433 508.3866190765492Q1275.7416369228433 500.3797083839611 1278.2790381986636 492.71111786148236Q1280.8164394744838 485.04252733900364 1286.0040154161607 478.896377582017Q1291.1915913578373 472.7502278250304 1299.0857286603891 469.0850926488457Q1306.9798659629407 465.419957472661 1317.4677912363306 465.419957472661Q1325.7002487089917 465.419957472661 1331.6208516859056 467.50626518833536Q1337.5414546628192 469.5925729040097 1341.5449100091132 472.8630012150668Q1345.5483653554072 476.1334295261239 1347.972993241191 479.7985647023086Q1350.3976211269746 483.46369987849334 1351.6381284173756 486.73412818955046Q1352.8786357077765 490.0045565006075 1353.3297292679224 492.0908642162819Q1353.7808228280683 494.17717193195625 1353.7808228280683 494.17717193195625H1338.4436417831107Q1338.4436417831107 494.17717193195625 1338.0489349179832 492.65473116646416Q1337.6542280528556 491.13229040097207 1336.4137207624547 488.87682260024303Q1335.1732134720537 486.621354799514 1332.8613589763063 484.36588699878496Q1330.549504480559 482.11041919805587 1326.8279826093562 480.5879784325638Q1323.1064607381534 479.0655376670717 1317.580564626367 479.0655376670717Q1310.9269346142164 479.0655376670717 1306.021292147631 481.5465522478736Q1301.1156496810452 484.02756682867556 1297.845221369988 488.2001822600243Q1294.574793058931 492.372797691373 1292.9959655984208 497.56037363304984Q1291.4171381379103 502.7479495747266 1291.4171381379103 508.1610722964763Q1291.4171381379103 515.4913426488457 1294.3492462788581 522.2577460510329Q1297.2813544198057 529.0241494532199 1303.089184006683 533.3095382746051Q1308.8970135935604 537.5949270959903 1317.4677912363306 537.5949270959903Q1327.3918495595385 537.5949270959903 1333.1996791464157 532.1818043742405Q1339.007508733293 526.7686816524908 1339.796922463548 517.7468104495747H1317.0166976761848V505.5672843256379H1354.6830099483598V511.7698207776428Q1354.6830099483598 524.7387606318348 1349.720980786756 533.4786983596598Q1344.7589516251521 542.2186360874848 1336.2445606774 546.6731849939247Q1327.7301697296477 551.1277339003645 1317.1294710662214 551.1277339003645Z M1519.0484855963955 550.0V479.85495139732683H1493.3361526680844V466.5476913730255H1560.097999569664V479.85495139732683H1534.3856666413528V550.0Z M1664.9481887910085 444.218560145808 1652.8814360571082 423.8065765492102H1667.090883201701L1676.4510745747266 444.10578675577153ZM1628.184063639125 458.7663274605103 1642.5062841737545 441.6247721749696H1654.573036907655L1668.8952574422842 458.7663274605103H1656.7157313183475L1648.596047235723 448.84226913730254L1640.363589763062 458.7663274605103ZM1609.6892276731471 550.0 1638.4464421324424 466.5476913730255H1658.4073321688943L1687.277320018226 550.0H1671.2634986330497L1665.2865089611178 532.4073511543135H1631.680038730255L1625.7030490583231 550.0ZM1636.0782009416769 519.1000911300122H1660.8883467496962L1648.4832738456864 482.22319258809233Z M1736.8685481217094 550.0V466.5476913730255H1757.2805317183072L1778.1436088750506 511.7698207776428L1799.4577795919402 466.5476913730255H1819.5314430184287V550.0H1804.419808753544V489.6662363304982L1785.2483324473471 529.8135631834751H1771.0388853027544L1751.980182386594 489.44068955042525V550.0Z M1958.1845857381534 550.0V466.5476913730255H1972.1684861026733L2010.511438715067 523.1599331713244V466.5476913730255H2025.735846369988V550.0H2011.751946005468L1973.4089933930743 494.4027187120292V550.0Z M2114.1211206460107 458.6535540704739Q2108.256904364115 458.6535540704739 2104.5353824929125 456.96195321992707Q2100.8138606217094 455.2703523693803 2098.7275529060353 452.6765643985419Q2096.6412451903607 450.0827764277035 2095.7954447650873 447.5453751518833Q2094.949644339814 445.00797387606315 2094.7804842547594 443.3163730255164Q2094.6113241697044 441.6247721749696 2094.6113241697044 441.6247721749696H2104.7609292729853Q2104.7609292729853 441.6247721749696 2104.986476053058 442.8652794653706Q2105.212022833131 444.10578675577153 2106.0578232584044 445.7410009113001Q2106.903623683678 447.37621506682865 2108.8207713142974 448.6167223572296Q2110.737918944917 449.8572296476306 2114.1211206460107 449.8572296476306Q2117.5043223471043 449.8572296476306 2119.421469977724 448.6167223572296Q2121.3386176083436 447.37621506682865 2122.2408047286353 445.7410009113001Q2123.142991848927 444.10578675577153 2123.368538629 442.8652794653706Q2123.5940854090727 441.6247721749696 2123.5940854090727 441.6247721749696H2133.7436905123536Q2133.7436905123536 441.6247721749696 2133.5745304272987 443.3163730255164Q2133.405370342244 445.00797387606315 2132.5031832219524 447.5453751518833Q2131.6009961016607 450.0827764277035 2129.514688385986 452.6765643985419Q2127.428380670312 455.2703523693803 2123.706858799109 456.96195321992707Q2119.9853369279062 458.6535540704739 2114.1211206460107 458.6535540704739ZM2075.3270744734714 550.0 2104.0842889327664 466.5476913730255H2124.0451789692183L2152.9151668185505 550.0H2136.901345433374L2130.9243557614423 532.4073511543135H2097.3178855305796L2091.3408958586474 550.0ZM2101.716047742001 519.1000911300122H2126.5261935500207L2114.1211206460107 482.22319258809233Z M2202.5063949220335 550.0V466.5476913730255H2216.490295286553L2254.833247898947 523.1599331713244V466.5476913730255H2270.0576555538682V550.0H2256.073755189348L2217.7308025769544 494.4027187120292V550.0Z M2361.036717800729 551.1277339003645Q2350.548792527339 551.1277339003645 2342.767428614824 547.5189854191981Q2334.986064702309 543.9102369380316 2329.85487545565 537.7640871810449Q2324.7236862089912 531.6179374240584 2322.186284933171 524.0057335965978Q2319.6488836573512 516.3935297691373 2319.6488836573512 508.3866190765492Q2319.6488836573512 500.3797083839611 2322.186284933171 492.71111786148236Q2324.7236862089912 485.04252733900364 2329.9112621506683 478.896377582017Q2335.098838092345 472.7502278250304 2342.9929753948963 469.0850926488457Q2350.887112697448 465.419957472661 2361.3750379708385 465.419957472661Q2369.6074954434994 465.419957472661 2375.528098420413 467.50626518833536Q2381.4487013973267 469.5925729040097 2385.452156743621 472.8630012150668Q2389.455612089915 476.1334295261239 2391.8802399756987 479.7985647023086Q2394.3048678614823 483.46369987849334 2395.5453751518835 486.73412818955046Q2396.785882442284 490.0045565006075 2397.2369760024303 492.0908642162819Q2397.688069562576 494.17717193195625 2397.688069562576 494.17717193195625H2382.3508885176184Q2382.3508885176184 494.17717193195625 2381.956181652491 492.65473116646416Q2381.5614747873633 491.13229040097207 2380.320967496962 488.87682260024303Q2379.0804602065614 486.621354799514 2376.768605710814 484.36588699878496Q2374.456751215067 482.11041919805587 2370.735229343864 480.5879784325638Q2367.013707472661 479.0655376670717 2361.4878113608747 479.0655376670717Q2354.834181348724 479.0655376670717 2349.928538882138 481.5465522478736Q2345.0228964155526 484.02756682867556 2341.7524681044956 488.2001822600243Q2338.4820397934386 492.372797691373 2336.903212332928 497.56037363304984Q2335.324384872418 502.7479495747266 2335.324384872418 508.1610722964763Q2335.324384872418 515.4913426488457 2338.256493013366 522.2577460510329Q2341.1886011543133 529.0241494532199 2346.9964307411906 533.3095382746051Q2352.804260328068 537.5949270959903 2361.3750379708385 537.5949270959903Q2371.299096294046 537.5949270959903 2377.1069258809234 532.1818043742405Q2382.9147554678007 526.7686816524908 2383.7041691980558 517.7468104495747H2360.9239444106925V505.5672843256379H2398.5902566828677V511.7698207776428Q2398.5902566828677 524.7387606318348 2393.6282275212634 533.4786983596598Q2388.6661983596596 542.2186360874848 2380.1518074119076 546.6731849939247Q2371.6374164641556 551.1277339003645 2361.036717800729 551.1277339003645Z M2537.243399402592 550.0V466.5476913730255H2552.5805804475494V536.6927399756987H2594.0811879809635V550.0Z M2676.827792755164 551.1277339003645Q2667.5803747721748 551.1277339003645 2660.024557639733 547.5753721142163Q2652.4687405072905 544.023010328068 2648.0705782958685 536.8055133657351Q2643.672416084447 529.5880164034022 2643.672416084447 518.6489975698663V466.5476913730255H2659.0095971294045V518.6489975698663Q2659.0095971294045 526.3175880923451 2663.3513726458077 531.5051640340218Q2667.6931481622114 536.6927399756987 2676.827792755164 536.6927399756987Q2686.075210738153 536.6927399756987 2690.4733729495747 531.5051640340218Q2694.8715351609962 526.3175880923451 2694.8715351609962 518.6489975698663V466.5476913730255H2706.1488741646417Q2710.5470363760633 466.5476913730255 2710.5470363760633 461.923982381531V454.3681652490887H2723.4032028402185V462.26230255164035Q2723.4032028402185 467.90097205346297 2720.3019346142164 471.39694714459296Q2717.200666388214 474.89292223572295 2711.1109033262455 474.89292223572295H2710.095942815917V518.6489975698663Q2710.095942815917 529.5880164034022 2705.6977806044956 536.8055133657351Q2701.299618393074 544.023010328068 2693.80018795565 547.5753721142163Q2686.300757518226 551.1277339003645 2676.827792755164 551.1277339003645ZM2677.617206485419 577.0656136087484Q2673.8956846142164 577.0656136087484 2671.5274434234507 574.5845990279465Q2669.1592022326854 572.1035844471446 2669.1592022326854 568.7203827460511Q2669.1592022326854 565.224407654921 2671.5274434234507 562.743393074119Q2673.8956846142164 560.2623784933171 2677.617206485419 560.2623784933171Q2681.2259549665855 560.2623784933171 2683.594196157351 562.743393074119Q2685.9624373481165 565.224407654921 2685.9624373481165 568.7203827460511Q2685.9624373481165 572.1035844471446 2683.594196157351 574.5845990279465Q2681.2259549665855 577.0656136087484 2677.617206485419 577.0656136087484Z M2813.705624746861 551.1277339003645Q2803.5560196435804 551.1277339003645 2795.94381581612 547.4625987241798Q2788.3316119886595 543.7974635479951 2783.2004227420007 537.6513137910085Q2778.069233495342 531.5051640340218 2775.5318322195217 523.8929602065614Q2772.994430943702 516.2807563791008 2772.994430943702 508.27384568651274Q2772.994430943702 500.2669349939247 2775.5318322195217 492.5983444714459Q2778.069233495342 484.9297539489672 2783.2004227420007 478.78360419198054Q2788.3316119886595 472.6374544349939 2795.94381581612 469.02870595382745Q2803.5560196435804 465.419957472661 2813.705624746861 465.419957472661Q2822.163628999595 465.419957472661 2828.2533920615633 467.5626518833536Q2834.3431551235317 469.7053462940462 2838.4029971648442 473.0885479951397Q2842.4628392061563 476.4717496962333 2844.88746709194 480.30604495747264Q2847.3120949777235 484.140340218712 2848.5526022681242 487.52354191980555Q2849.7931095585254 490.90674362089914 2850.187816423653 493.04943803159176Q2850.582523288781 495.19213244228433 2850.582523288781 495.19213244228433H2835.3581156338596Q2835.3581156338596 495.19213244228433 2834.963408768732 493.61330498177404Q2834.5687019036045 492.0344775212637 2833.3845813082216 489.6098496354799Q2832.2004607128392 487.1852217496962 2829.8322195220735 484.8169805589307Q2827.463978331308 482.44873936816526 2823.5732963750506 480.8699119076549Q2819.682614418793 479.2910844471446 2813.9311715269337 479.2910844471446Q2807.6158616848925 479.2910844471446 2802.8793793033615 481.7157123329283Q2798.1428969218305 484.140340218712 2794.98524200081 488.31295565006076Q2791.8275870797893 492.4855710814095 2790.3051463142974 497.67314702308624Q2788.782705548805 502.86072296476306 2788.782705548805 508.27384568651274Q2788.782705548805 513.6869684082625 2790.3051463142974 518.818157654921Q2791.8275870797893 523.9493469015796 2794.98524200081 528.1219623329283Q2798.1428969218305 532.294577764277 2802.8793793033615 534.775592345079Q2807.6158616848925 537.2566069258809 2813.9311715269337 537.2566069258809Q2819.682614418793 537.2566069258809 2823.5732963750506 535.6213927703523Q2827.463978331308 533.9861786148238 2829.8322195220735 531.6179374240583Q2832.2004607128392 529.2496962332929 2833.3845813082216 526.8814550425274Q2834.5687019036045 524.5132138517619 2834.963408768732 522.8779996962332Q2835.3581156338596 521.2427855407047 2835.3581156338596 521.2427855407047H2850.582523288781Q2850.582523288781 521.2427855407047 2850.187816423653 523.3854799513973Q2849.7931095585254 525.5281743620899 2848.5526022681242 528.9677627582016Q2847.3120949777235 532.4073511543135 2844.88746709194 536.1852597205345Q2842.4628392061563 539.9631682867557 2838.4029971648442 543.4027566828674Q2834.3431551235317 546.8423450789793 2828.2533920615633 548.9850394896719Q2822.163628999595 551.1277339003645 2813.705624746861 551.1277339003645Z M2989.235666008505 550.0V466.5476913730255H3003.219566373025L3041.5625189854186 523.1599331713244V466.5476913730255H3056.78692664034V550.0H3042.80302627582L3004.460073663426 494.4027187120292V550.0Z M3106.378154743823 550.0V466.5476913730255H3121.7153357887805V500.83080194410695H3156.562313310044V466.5476913730255H3171.8994943550015V550.0H3156.562313310044V514.1380619684082H3121.7153357887805V550.0Z M3239.985558424463 458.7663274605103 3254.3077789590925 441.6247721749696H3266.3745316929926L3280.6967522276223 458.7663274605103H3268.5172261036855L3260.397542021061 448.84226913730254L3252.1650845483996 458.7663274605103ZM3221.490722458485 550.0 3250.24793691778 466.5476913730255H3270.208826954232L3299.078814803564 550.0H3283.0649934183875L3277.088003746456 532.4073511543135H3243.481533515593L3237.504543843661 550.0ZM3247.8796957270147 519.1000911300122H3272.6898415350342L3260.2847686310242 482.22319258809233Z M3348.670042907047 550.0V466.5476913730255H3362.6539432715667L3400.9968958839604 523.1599331713244V466.5476913730255H3416.221303538882V550.0H3402.2374031743616L3363.894450561968 494.4027187120292V550.0Z M3588.142596319359 551.1277339003645Q3580.361232406844 551.1277339003645 3574.835336295058 549.2105862697449Q3569.309440183272 547.2934386391252 3565.6443050070875 544.248557108141Q3561.9791698309027 541.2036755771568 3559.8364754202103 537.7640871810449Q3557.6937810095174 534.3244987849332 3556.622433804171 531.279617253949Q3555.551086598825 528.2347357229647 3555.2127664287154 526.317588092345Q3554.874446258606 524.4004404617253 3554.874446258606 524.4004404617253H3570.4371740836364Q3570.4371740836364 524.4004404617253 3570.7191075587275 525.7537211421628Q3571.0010410338186 527.1070018226003 3572.016001544147 529.1933095382747Q3573.030962054475 531.2796172539489 3575.004496380113 533.3095382746051Q3576.978030705751 535.3394592952612 3580.304845711826 536.7491266707168Q3583.6316607179015 538.1587940461725 3588.5936898795053 538.1587940461725Q3596.262280401984 538.1587940461725 3600.2657357482776 534.7192056500608Q3604.269191094572 531.2796172539489 3604.269191094572 526.2048147023086Q3604.269191094572 521.9194258809234 3601.2243095635877 519.3820246051032Q3598.1794280326035 516.8446233292831 3592.2024383606717 515.6041160388821L3581.1506461370996 513.2358748481166Q3574.7225629050217 511.8825941676792 3569.1402800982173 509.17603280680436Q3563.557997291413 506.4694714459295 3560.1747955903193 501.845762454435Q3556.7915938892256 497.22205346294044 3556.7915938892256 490.0045565006075Q3556.7915938892256 482.44873936816526 3560.569502455447 476.9228432563791Q3564.347411021668 471.39694714459296 3571.0010410338186 468.408452308627Q3577.6546710459693 465.419957472661 3586.563768858849 465.419957472661Q3595.021773111583 465.419957472661 3600.547669223369 467.90097205346297Q3606.0735653351553 470.3819866342649 3609.4003803412306 473.99073511543133Q3612.727195347306 477.5994835965978 3614.3060228078166 481.20823207776425Q3615.8848502683268 484.8169805589307 3616.3923305234907 487.2979951397327Q3616.8998107786547 489.77900972053465 3616.8998107786547 489.77900972053465H3601.9009499038066Q3601.9009499038066 489.77900972053465 3601.449856343661 488.0310221749696Q3600.998762783515 486.2830346294046 3599.4199353230047 484.02756682867556Q3597.8411078624945 481.7720990279465 3594.6834529414737 480.0241114823815Q3591.525798020453 478.27612393681653 3586.2254486887396 478.27612393681653Q3578.6696315562976 478.27612393681653 3575.2300431601857 481.6593256379101Q3571.7904547640737 485.04252733900364 3571.7904547640737 488.98959599027944Q3571.7904547640737 493.04943803159176 3574.9481096850946 495.3049058323208Q3578.1057646061154 497.56037363304984 3583.406113937828 498.8008809234508L3595.247319891656 501.2818955042527Q3601.9009499038066 502.7479495747266 3607.4268460155927 505.68005771567437Q3612.9527421273788 508.61216585662214 3616.223170438436 513.4050349331714Q3619.4935987494932 518.1979040097206 3619.4935987494932 525.3026275820171Q3619.4935987494932 532.52012454435 3615.8848502683268 538.3843408262455Q3612.2761017871603 544.248557108141 3605.2841516049 547.6881455042528Q3598.29220142264 551.1277339003645 3588.142596319359 551.1277339003645Z M3702.2402035236933 551.1277339003645Q3692.992785540704 551.1277339003645 3685.436968408262 547.5753721142163Q3677.88115127582 544.023010328068 3673.4829890643978 536.8055133657351Q3669.084826852976 529.5880164034022 3669.084826852976 518.6489975698663V466.5476913730255H3684.422007897934V518.6489975698663Q3684.422007897934 526.3175880923451 3688.763783414337 531.5051640340218Q3693.1055589307407 536.6927399756987 3702.2402035236933 536.6927399756987Q3711.4876215066824 536.6927399756987 3715.885783718104 531.5051640340218Q3720.2839459295255 526.3175880923451 3720.2839459295255 518.6489975698663V466.5476913730255H3731.561284933171Q3735.9594471445926 466.5476913730255 3735.9594471445926 461.923982381531V454.3681652490887H3748.8156136087478V462.26230255164035Q3748.8156136087478 467.90097205346297 3745.7143453827457 471.39694714459296Q3742.613077156743 474.89292223572295 3736.523314094775 474.89292223572295H3735.5083535844465V518.6489975698663Q3735.5083535844465 529.5880164034022 3731.110191373025 536.8055133657351Q3726.7120291616034 544.023010328068 3719.2125987241793 547.5753721142163Q3711.7131682867553 551.1277339003645 3702.2402035236933 551.1277339003645ZM3703.0296172539483 577.0656136087484Q3699.3080953827457 577.0656136087484 3696.93985419198 574.5845990279465Q3694.5716130012147 572.1035844471446 3694.5716130012147 568.7203827460511Q3694.5716130012147 565.224407654921 3696.93985419198 562.743393074119Q3699.3080953827457 560.2623784933171 3703.0296172539483 560.2623784933171Q3706.638365735115 560.2623784933171 3709.00660692588 562.743393074119Q3711.374848116646 565.224407654921 3711.374848116646 568.7203827460511Q3711.374848116646 572.1035844471446 3709.00660692588 574.5845990279465Q3706.638365735115 577.0656136087484 3703.0296172539483 577.0656136087484Z"/></svg>
+    </a>
+    <nav aria-label="Điều hướng chính">
       <ul>
-        <li><a href="#doanh-nghiep">Doanh nghiệp</a></li>
-        <li><a href="#chi-em">Chị em đi làm</a></li>
-        <li><a href="#cach-lam">Cách làm</a></li>
-        <li><a href="#kinh-nghiem">Kinh nghiệm</a></li>
+        <li><a href="#boi-canh">Về chúng tôi</a></li>
+        <li><a href="#giai-phap">Giải pháp</a></li>
+        <li><a href="#phuong-phap">Phương pháp</a></li>
+        <li><a href="#chan-doan">Chẩn đoán miễn phí</a></li>
+        <li><a href="#startups">Capabilities Grant</a></li>
+        <li><a href="#hoi-dap">Hỏi đáp</a></li>
       </ul>
     </nav>
-    <a class="btn sm" href="#lien-he">Đặt lịch trao đổi</a>
+    <a class="btn btn-primary btn-sm hdr-cta" href="#chan-doan"><span class="l">Đặt lịch chẩn đoán miễn phí</span><span class="s">Chẩn đoán miễn phí</span></a>
   </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <h1>Công nghệ không thay thế con người. <span>Nó giải phóng họ.</span></h1>
-    <p class="lede">Tôi thiết kế chương trình đào tạo giúp đội ngũ doanh nghiệp làm việc cùng AI, và đồng hành cùng những người phụ nữ đi làm nhìn rõ năng lực thật của mình — để làm việc thông minh hơn, sống cân bằng hơn và tạo ra kết quả rõ ràng.</p>
-    <div class="who">
-      <span><strong>Nguyễn Minh Quyên</strong> · 15 năm L&amp;D và lãnh đạo kinh doanh · MBA CFVG – Paris 1 Panthéon-Sorbonne</span>
-    </div>
-    <div class="paths">
-      <a class="path biz" href="#doanh-nghiep"><b>Cho doanh nghiệp</b><span>Chuyển đổi năng lực đội ngũ cùng AI, phát triển đội ngũ nữ và quản lý nữ kế cận.</span></a>
-      <a class="path her" href="#chi-em"><b>Cho chị em đi làm</b><span>Trò chuyện 1:1, workshop nhóm và thực hành AI để gỡ bế tắc sự nghiệp.</span></a>
-    </div>
-  </div>
-</section>
+<main id="top">
 
-<div class="proof">
-  <div class="wrap">
-    <ul>
-      <li><b>10.000+</b>đối tác kinh doanh từng dẫn dắt, khoảng 90% là phụ nữ</li>
-      <li><b>200+</b>dự án L&amp;D gắn với bài toán kinh doanh cụ thể</li>
-      <li><b>1.000+</b>giờ tư vấn, đồng hành 1:1</li>
-      <li><b>28% → 80%+</b>tỷ lệ đối tác mới ở lại sau tháng đầu</li>
-    </ul>
-  </div>
-</div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="label">M Capability Lab</span>
+          <h1>Năng lực con người quyết định thành bại của doanh nghiệp.</h1>
+          <p class="intro">Chúng tôi đồng hành cùng doanh nghiệp nhỏ và startup Việt Nam nâng tầm năng lực nhân sự: bắt đầu từ bài toán kinh doanh, tìm đúng năng lực đội ngũ đang thiếu, rồi cùng doanh nghiệp xây dựng năng lực đó.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#chan-doan">Đặt lịch Chẩn đoán năng lực đội ngũ miễn phí</a>
+            <a class="btn btn-line" href="#startups">Tìm hiểu Capabilities Grant</a>
+          </div>
+        </div>
+        <div class="photo" role="img" aria-label="Vị trí ảnh bìa">[Ảnh bìa]<br>Ảnh bìa.jpeg</div>
+      </div>
+      <div class="hero-strip">
+        <div><b>Bắt đầu từ bài toán kinh doanh</b><span>Không bán khóa học có sẵn</span></div>
+        <div><b>Thiết kế riêng sau phân tích nhu cầu</b><span>Đúng người, đúng năng lực cần xây</span></div>
+        <div><b>Đo lường bằng kết quả</b><span>Số liệu trước và sau chương trình</span></div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <div class="wrap belief">
-    <blockquote>Khi người phụ nữ nhìn thấy năng lực thật của mình và gắn được mục tiêu cá nhân với mục tiêu của tổ chức, họ không chỉ làm việc. Họ cống hiến.</blockquote>
-    <div>
-      <p>Hơn mười lăm năm, tôi sống cùng lúc hai vai trò: nhà quản lý dẫn dắt mạng lưới hơn 10.000 đối tác trong môi trường đa quốc gia, và người vợ, người mẹ của ba con. Tôi hiểu cảm giác đứng giữa hai thế giới ấy.</p>
-      <p>Những năm gần đây, tôi trực tiếp nghiên cứu và dẫn dắt các chương trình chuyển đổi năng lực cùng AI. Điều tôi thấy rõ nhất: nỗi sợ "bị AI thay thế" tan đi rất nhanh khi người ta được thực hành đúng cách, trên chính công việc hằng ngày của mình.</p>
-      <p>Tôi không phải nhà tâm lý. Tôi là người thúc đẩy kết quả kinh doanh bằng sự phát triển năng lực của con người.</p>
+  <section class="sec" id="boi-canh">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Bối cảnh</span><h2>Khoảng cách năng lực giữa doanh nghiệp lớn và doanh nghiệp nhỏ</h2></div>
+        <p>Chiến lược hay đến đâu cũng chỉ thành kết quả khi con người đủ năng lực để thực thi. Doanh nghiệp lớn hiểu điều đó và đầu tư bài bản. Doanh nghiệp nhỏ cũng cần, nhưng chưa có điều kiện.</p>
+      </div>
+      <div class="ctx">
+        <div>
+          <span class="tag">Doanh nghiệp lớn</span>
+          <h3>Đầu tư bài bản vào con người</h3>
+          <p>Xây dựng bộ phận đào tạo và phát triển (L&amp;D) nội bộ, hợp tác với những công ty tư vấn hàng đầu thế giới, và duy trì ngân sách phát triển năng lực đội ngũ hằng năm.</p>
+        </div>
+        <div>
+          <span class="tag">Doanh nghiệp nhỏ</span>
+          <h3>Năng lực phát triển tự phát</h3>
+          <p>Không có phòng đào tạo, không có ngân sách thuê tư vấn lớn. Chủ doanh nghiệp vừa bán hàng, vừa vận hành, vừa tự kèm cặp nhân viên. Người giỏi rời đi, người mới loay hoay, trong khi AI đang thay đổi cách làm việc từng ngày.</p>
+        </div>
+        <div class="us">
+          <span class="tag">M Capability Lab</span>
+          <h3>Thu hẹp khoảng cách đó</h3>
+          <p>Mang cách làm bài bản của doanh nghiệp lớn đến với doanh nghiệp nhỏ Việt Nam, ở quy mô và chi phí vừa vặn, để đội ngũ mạnh lên thành kết quả kinh doanh.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="doanh-nghiep" class="tint-biz">
-  <div class="wrap">
-    <div class="svc-head">
-      <h2>Chương trình cho doanh nghiệp</h2>
-      <p>Thiết kế riêng theo bài toán của bạn. Triển khai trực tiếp hoặc online.</p>
+  <section class="sec soft" id="giai-phap">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Giải pháp</span><h2>Hai hướng chuyển đổi năng lực</h2></div>
+        <p>Những bài toán dưới đây là các vấn đề chúng tôi thường đồng hành giải quyết cùng doanh nghiệp. Mỗi chương trình thực tế được thiết kế riêng sau khi phân tích nhu cầu của từng doanh nghiệp.</p>
+      </div>
+      <div class="sol">
+        <article class="sol-card ai">
+          <div class="sol-top"><div class="nm">AI SHIFT</div><p>Chuyển đổi năng lực với AI: đưa AI vào đúng quy trình làm việc hằng ngày của đội ngũ.</p></div>
+          <ul>
+            <li><span class="code">Starter</span><div><div class="t">Khởi động AI cho đội ngũ</div><div class="p">Đội ngũ e ngại công nghệ, dùng AI rời rạc và thiếu kiểm soát dữ liệu khách hàng.</div></div></li>
+            <li><span class="code">Sales</span><div><div class="t">Bán hàng thông minh cùng AI</div><div class="p">Tin nhắn dồn dập, phản hồi chậm, chất lượng tư vấn không đồng đều, khách cũ bị bỏ quên.</div></div></li>
+            <li><span class="code">Content</span><div><div class="t">Xưởng nội dung cùng AI</div><div class="p">Đăng bài thất thường, cạn ý tưởng, tốn nhiều thời gian cho mỗi bài viết và hình ảnh.</div></div></li>
+            <li><span class="code">Ops</span><div><div class="t">Vận hành tinh gọn cùng AI</div><div class="p">Quy trình nằm trong đầu người sáng lập, báo cáo và họp hành chiếm phần lớn thời gian quản lý.</div></div></li>
+            <li><span class="code">Champion</span><div><div class="t">Đầu mối AI nội bộ</div><div class="p">Học xong rồi bỏ, vì không có ai dẫn dắt và cập nhật việc ứng dụng AI lâu dài.</div></div></li>
+          </ul>
+        </article>
+        <article class="sol-card her">
+          <div class="sol-top"><div class="nm">HER SHIFT</div><p>Chuyển đổi năng lực phụ nữ: khai mở tâm thế, kỹ năng và sự bền bỉ của đội ngũ nữ.</p></div>
+          <ul>
+            <li><span class="code">Energy</span><div><div class="t">Năng lượng làm chủ</div><div class="p">Đội ngũ làm cho xong việc, thiếu chủ động, năng lượng giảm dần theo thời gian.</div></div></li>
+            <li><span class="code">Sell</span><div><div class="t">Tư vấn bằng sự thấu cảm</div><div class="p">Nhân sự giỏi chuyên môn nhưng ngại tư vấn, ngại chốt đơn, sợ bị cho là ép khách.</div></div></li>
+            <li><span class="code">Lead</span><div><div class="t">Nữ quản lý vững vàng</div><div class="p">Quản lý nữ ôm việc, ngại giao việc và phản hồi, chịu áp lực từ cả cấp trên lẫn cấp dưới.</div></div></li>
+            <li><span class="code">AI</span><div><div class="t">Lấy lại thời gian cùng AI</div><div class="p">Việc vặt chiếm hết thời gian, chị em kiệt sức giữa công việc và gia đình, lo bị tụt lại.</div></div></li>
+            <li><span class="code">Retain</span><div><div class="t">Giữ chân nhân tài nữ</div><div class="p">Nhân sự mới nghỉ sớm, người giỏi rời đi vì bài toán cân bằng sự nghiệp và gia đình.</div></div></li>
+          </ul>
+        </article>
+      </div>
+      <p class="tna">Chương trình không cố định theo danh mục. Chúng tôi chỉ đề xuất nội dung đào tạo sau khi phân tích nhu cầu năng lực (TNA) trên trường hợp thực tế của doanh nghiệp.</p>
     </div>
-    <ul class="pains">
-      <li>Muốn đưa AI vào vận hành nhưng đội ngũ còn e ngại, dùng rời rạc, chưa ra kết quả.</li>
-      <li>Nhân sự mới rơi rụng sớm; đội ngũ tuyến đầu khó giữ năng lượng bền bỉ.</li>
-      <li>Từng mất những nhân sự, thủ lĩnh nữ giỏi vì bài toán gia đình – sự nghiệp chưa có lời giải.</li>
-      <li>Cần chuyển đội ngũ từ tâm thế "làm cho xong việc" sang người đồng hành có trách nhiệm.</li>
-    </ul>
-    <div class="programs">
-      <article class="prog">
-        <div class="fmt">Lộ trình 6–12 tuần</div>
-        <h3>Chuyển đổi năng lực cùng AI</h3>
-        <p>Đưa AI vào đúng những công việc lặp lại và tốn thời gian nhất của từng phòng ban.</p>
-        <ul>
-          <li>Khảo sát công việc, chọn tình huống dùng AI có tác động lớn</li>
-          <li>Thực hành trên dữ liệu và quy trình thật của doanh nghiệp</li>
-          <li>Xây thư viện câu lệnh, quy trình mẫu dùng chung</li>
-          <li>Đo thời gian tiết kiệm và chất lượng đầu ra</li>
-        </ul>
-        <div class="for">Phù hợp: ban lãnh đạo, quản lý cấp trung, khối văn phòng</div>
-      </article>
-      <article class="prog">
-        <div class="fmt">Workshop 1–2 ngày</div>
-        <h3>AI cho đội ngũ kinh doanh</h3>
-        <p>Giúp đội bán hàng và mạng lưới đối tác chuẩn bị, chăm sóc khách và tạo nội dung nhanh hơn.</p>
-        <ul>
-          <li>Nghiên cứu khách hàng, chuẩn bị buổi gặp với AI</li>
-          <li>Soạn tin nhắn, kịch bản tư vấn, nội dung mạng xã hội</li>
-          <li>Lập kế hoạch kinh doanh cá nhân, theo dõi mục tiêu</li>
-          <li>Nguyên tắc dùng AI an toàn với thông tin khách hàng</li>
-        </ul>
-        <div class="for">Phù hợp: sales, trưởng nhóm, nhà phân phối, đối tác kinh doanh</div>
-      </article>
-      <article class="prog">
-        <div class="fmt">Chương trình 2–3 tháng</div>
-        <h3>Khai mở năng lực đội ngũ nữ</h3>
-        <p>Gắn mục tiêu cá nhân của từng chị em với mục tiêu phòng ban, và chuẩn bị lớp quản lý nữ kế cận.</p>
-        <ul>
-          <li>Đánh giá năng lực, xác định điểm nghẽn thật</li>
-          <li>Workshop nhóm và coaching cho nhóm nòng cốt</li>
-          <li>Mentoring lãnh đạo nữ tiềm năng</li>
-          <li>Kế hoạch giữ chân và phát triển dài hạn</li>
-        </ul>
-        <div class="for">Phù hợp: doanh nghiệp có đội ngũ hoặc mạng lưới kinh doanh đông nữ</div>
-      </article>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="chi-em" class="tint-her">
-  <div class="wrap">
-    <div class="svc-head">
-      <h2>Đồng hành cùng chị em đi làm</h2>
-      <p>Coaching, mentoring theo vấn đề cụ thể của bạn.</p>
+  <section class="sec" id="phuong-phap">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Phương pháp</span><h2>Xây đội ngũ theo mô hình năng lực chữ M</h2></div>
+        <p>Chữ M có nhiều chân trụ đứng vững, nối với nhau bằng một nét liền. Đó cũng là hình ảnh người nhân sự mà doanh nghiệp nhỏ cần nhất.</p>
+      </div>
+      <div class="mmodel">
+        <div class="mm-mark"><svg viewBox="130 235 760 550" role="img" aria-label="Chữ M, hình ảnh mô hình năng lực chữ M"><defs><clipPath id="kmm"><rect x="0" y="0" width="1000" height="785"/></clipPath><linearGradient id="amm" x1="330" y1="270" x2="250" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient><linearGradient id="bmm" x1="420" y1="520" x2="505" y2="770" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#169A70"/><stop offset="1" stop-color="#0A5A41"/></linearGradient><linearGradient id="cmm" x1="715" y1="275" x2="805" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient></defs><g transform="translate(0 0)" clip-path="url(#kmm)"><polygon points="143,785 277,785 392,248 282,248" fill="url(#amm)" stroke="url(#amm)" stroke-width="26" stroke-linejoin="round"/><polygon points="282,248 437,248 570,785 448,785" fill="url(#bmm)" stroke="url(#bmm)" stroke-width="26" stroke-linejoin="round"/><polygon points="600,248 722,248 877,785 748,785" fill="url(#cmm)" stroke="url(#cmm)" stroke-width="26" stroke-linejoin="round"/><polygon points="448,785 577,785 722,248 588,248" fill="#169A70" stroke="#169A70" stroke-width="26" stroke-linejoin="round"/></g></svg></div>
+        <div class="mm-cards">
+          <div class="mm-card"><h3>Những chân trụ chuyên môn</h3><p>Mỗi nhân sự vững ở vài thế mạnh sâu, như bán hàng, chăm sóc khách hàng, dẫn dắt nhóm hay làm việc cùng AI, thay vì chỉ giỏi một việc.</p></div>
+          <div class="mm-card"><h3>Nét nối liền</h3><p>Các thế mạnh được nối với nhau bằng tư duy chủ động và tinh thần làm chủ công việc, để đội ngũ tự phối hợp và ra quyết định.</p></div>
+          <div class="mm-card"><h3>Vì sao doanh nghiệp nhỏ cần</h3><p>Ở doanh nghiệp nhỏ, mỗi người thường kiêm nhiều vai. Một đội ngũ chữ M vừa linh hoạt, vừa khó bị thay thế khi công nghệ thay đổi.</p></div>
+          <p class="mm-lab"><b>Capability</b> nghĩa là năng lực. <b>Lab</b> là cách chúng tôi làm việc: mỗi giải pháp đều được đo bằng số liệu trước và sau, điều chỉnh cho đến khi tạo ra kết quả thật.</p>
+        </div>
+      </div>
+      <div class="m-steps-head"><h3>Bốn bước đồng hành cùng doanh nghiệp</h3><p>Không phải mọi vấn đề về con người đều giải quyết được bằng đào tạo. Vì vậy, chúng tôi luôn tìm đúng nguyên nhân trước khi đề xuất giải pháp.</p></div>
+      <ol class="method">
+        <li><h3>Chẩn đoán bài toán kinh doanh</h3><p>Làm việc trực tiếp với chủ doanh nghiệp để hiểu mục tiêu, chỉ số và điểm nghẽn hiện tại.</p></li>
+        <li><h3>Phân tích nhu cầu năng lực</h3><p>Truy ngược về con người: đâu là lỗ hổng năng lực cần đào tạo, đâu là vấn đề cần giải pháp khác.</p></li>
+        <li><h3>Thiết kế và triển khai</h3><p>Xây dựng chương trình riêng thuộc AI SHIFT, HER SHIFT hoặc kết hợp, triển khai online hoặc trực tiếp.</p></li>
+        <li><h3>Đo lường và duy trì</h3><p>So sánh số liệu trước và sau, trao bộ công cụ để đội ngũ tiếp tục áp dụng.</p></li>
+      </ol>
+      <div class="principles">
+        <div class="pr"><h3>Gắn với kết quả kinh doanh</h3><p>Mỗi chương trình đều xuất phát từ một chỉ số kinh doanh cụ thể mà doanh nghiệp muốn cải thiện.</p></div>
+        <div class="pr"><h3>Thiết kế cho doanh nghiệp nhỏ</h3><p>Quy mô, thời lượng và cách triển khai phù hợp với nhịp vận hành của đội ngũ nhỏ, nơi mỗi người kiêm nhiều vai.</p></div>
+        <div class="pr"><h3>Con người và công nghệ cùng tiến</h3><p>AI giải phóng con người khỏi việc vụn vặt, còn kỹ năng và tâm thế giúp đội ngũ gắn bó và cống hiến lâu dài.</p></div>
+      </div>
     </div>
-    <ul class="pains">
-      <li>Quen chu toàn cho người khác mà bỏ quên giá trị của chính mình.</li>
-      <li>Loay hoay với cấp trên, hoặc kiệt sức vì chưa biết dẫn dắt cấp dưới.</li>
-      <li>Muốn bứt phá nhưng thiếu phương pháp, bế tắc với bước tiến sự nghiệp.</li>
-      <li>Lo bị tụt hậu, bị AI thay thế nếu không kịp nâng cấp năng lực.</li>
-    </ul>
-    <div class="programs">
-      <article class="prog">
-        <div class="fmt">1:1 · 60 phút · online</div>
-        <h3>Buổi trò chuyện khai mở</h3>
-        <p>Một giờ để gọi tên điều đang làm bạn kẹt lại, và chọn bước đi đầu tiên.</p>
-        <ul>
-          <li>Lắng nghe tình huống thật của bạn</li>
-          <li>Nhìn lại điểm mạnh bạn đang bỏ quên</li>
-          <li>Ra về với 1–2 hành động cụ thể</li>
-        </ul>
-        <div class="for">Phù hợp: khi bạn cần một người hiểu và giúp bạn nhìn rõ</div>
-      </article>
-      <article class="prog">
-        <div class="fmt">Workshop nhóm · 2–3 tiếng · online</div>
-        <h3>Workshop phát triển năng lực</h3>
-        <p>Học cùng những người phụ nữ có chung trăn trở, theo từng chủ đề.</p>
-        <ul>
-          <li>Hiểu và dùng đúng năng lực của bản thân</li>
-          <li>Làm việc với cấp trên, dẫn dắt cấp dưới</li>
-          <li>Cân bằng sự nghiệp – gia đình bằng hệ thống</li>
-        </ul>
-        <div class="for">Phù hợp: nhân viên, quản lý nữ muốn có phương pháp</div>
-      </article>
-      <article class="prog">
-        <div class="fmt">Workshop thực hành · online</div>
-        <h3>Phụ nữ đi làm cùng AI</h3>
-        <p>Thực hành AI cho công việc và việc nhà, từ người cũng tự học AI khi đang nuôi ba con.</p>
-        <ul>
-          <li>Soạn email, báo cáo, kế hoạch nhanh hơn</li>
-          <li>Tổ chức lịch, việc gia đình, việc học của con</li>
-          <li>Học kỹ năng mới nhanh hơn với AI</li>
-        </ul>
-        <div class="for">Phù hợp: chị em chưa biết bắt đầu với AI từ đâu</div>
-      </article>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="cach-lam">
-  <div class="wrap">
-    <h2>Tôi không bắt đầu từ khóa học</h2>
-    <p style="margin-top:1.2rem;color:var(--muted)">Mỗi chương trình bắt đầu từ vấn đề kinh doanh của bạn, rồi mới đi đến con người và giải pháp đào tạo.</p>
-    <ol class="steps">
-      <li><h3>Hiểu bài toán kinh doanh</h3><p>Chỉ số nào cần thay đổi, ở bộ phận nào, trong bao lâu.</p></li>
-      <li><h3>Truy ngược về con người</h3><p>Đâu là lỗ hổng năng lực cần đào tạo, đâu là vấn đề cần giải pháp khác.</p></li>
-      <li><h3>Thiết kế và triển khai</h3><p>Nội dung bản địa hóa, thực hành trên công việc thật, có AI hỗ trợ.</p></li>
-      <li><h3>Đo kết quả</h3><p>So với chỉ số ban đầu, điều chỉnh và bàn giao để đội ngũ tự vận hành.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section id="kinh-nghiem" style="background:var(--paper);border-top:1px solid var(--line)">
-  <div class="wrap exp">
-    <div>
-      <h2>Kinh nghiệm thực chiến</h2>
-      <p style="margin-top:1.2rem;color:var(--muted)">15 năm tại một tập đoàn đa quốc gia, quản trị con người và kết quả kinh doanh trong mạng lưới phần lớn là phụ nữ.</p>
-      <ul class="creds">
-        <li>Thạc sĩ Quản trị Kinh doanh (MBA), CFVG – Université Paris 1 Panthéon-Sorbonne</li>
-        <li>Cử nhân Ngôn ngữ Anh, Đại học Phương Đông</li>
-        <li>Chứng chỉ Health Coach</li>
-      </ul>
+  <section class="sec dark-band" id="chan-doan">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Bắt đầu miễn phí</span><h2>Chẩn đoán năng lực đội ngũ</h2></div>
+        <p>Trước khi đầu tư vào đào tạo, doanh nghiệp cần biết đội ngũ đang thiếu năng lực gì. Buổi chẩn đoán 1:1 giúp CEO hoặc Giám đốc nhân sự nhìn rõ điều đó, hoàn toàn miễn phí.</p>
+      </div>
+      <div class="diag-grid">
+        <div class="diag-card">
+          <span class="free">Miễn phí</span>
+          <div class="diag-facts">
+            <div><b>Thời lượng</b><span>60 phút</span></div>
+            <div><b>Hình thức</b><span>Online hoặc trực tiếp tại Hà Nội</span></div>
+            <div><b>Dành cho</b><span>CEO hoặc Giám đốc nhân sự</span></div>
+            <div><b>Chuyên gia</b><span>Làm việc 1:1</span></div>
+          </div>
+          <h3>Trong buổi chẩn đoán</h3>
+          <ul>
+            <li>Làm rõ mục tiêu và chỉ số kinh doanh doanh nghiệp đang cần cải thiện.</li>
+            <li>Xác định các điểm nghẽn liên quan đến con người và đội ngũ.</li>
+            <li>Phân biệt đâu là lỗ hổng năng lực cần đào tạo, đâu là vấn đề cần giải pháp khác.</li>
+            <li>Gợi ý hướng ưu tiên tiếp theo cho doanh nghiệp.</li>
+          </ul>
+        </div>
+        <form id="diagForm" novalidate>
+          <fieldset><legend>Đặt lịch chẩn đoán</legend>
+            <div class="fields">
+              <div class="field full"><label for="d1">Họ tên và chức vụ <span class="req">*</span></label><input id="d1" name="ho_ten" required autocomplete="name"></div>
+              <div class="field full"><label for="d2">Tên doanh nghiệp <span class="req">*</span></label><input id="d2" name="ten_dn" required autocomplete="organization"></div>
+              <div class="field"><label for="d3">Số điện thoại/Zalo <span class="req">*</span></label><input id="d3" name="sdt" type="tel" required autocomplete="tel"></div>
+              <div class="field"><label for="d4">Email <span class="req">*</span></label><input id="d4" name="email" type="email" required autocomplete="email"></div>
+              <div class="field full"><label for="d5">Hình thức mong muốn <span class="req">*</span></label><select id="d5" name="hinh_thuc" required><option value="">Chọn</option><option>Online</option><option>Trực tiếp tại Hà Nội</option></select></div>
+            </div>
+          </fieldset>
+          <label class="consent"><input type="checkbox" required><span>Tôi đồng ý để M Capability Lab sử dụng các thông tin trên để liên hệ sắp xếp buổi chẩn đoán. Thông tin được bảo mật, không chia sẻ cho bên thứ ba.</span></label>
+          <button class="btn btn-primary" type="submit">Đặt lịch chẩn đoán miễn phí</button>
+          <p class="err" role="alert">Vui lòng điền đủ các mục có dấu * và tích ô đồng ý.</p>
+          <p class="pnote">Bản xem trước: form chưa kết nối hệ thống nhận đăng ký.</p>
+        </form>
+        <div class="done" role="status" tabindex="-1" ><h3>Đã nhận yêu cầu đặt lịch</h3><p class="muted">Chúng tôi sẽ liên hệ qua số điện thoại hoặc email để sắp xếp thời gian phù hợp.</p></div>
+      </div>
     </div>
-    <ol class="timeline">
-      <li><span class="yr">2023 – 2026</span><div><h3>Quản lý Phát triển Năng lực & Kinh doanh Toàn quốc, thành viên Ban Lãnh đạo</h3><p>Dẫn dắt dự án đào tạo chuyển đổi năng lực ứng dụng AI; xây mạng lưới giảng viên được chứng nhận tại 4 chi nhánh, bản địa hóa khoảng 90% chương trình; trực tiếp coaching 8 trong Top 15 đối tác xuất sắc toàn quốc (2025).</p></div></li>
-      <li><span class="yr">2015 – 2023</span><div><h3>Quản lý Vùng, chi nhánh Hà Nội</h3><p>Chi nhánh đạt vị trí số 1 toàn quốc 5 trong 8 năm; quản lý 40 nhân sự và khoảng 8.000 đối tác. Đồng hành cộng đồng S21 từ 2021 – tự vận hành, đóng góp khoảng 50% doanh thu toàn quốc.</p></div></li>
-      <li><span class="yr">2011 – 2015</span><div><h3>Quản lý Kinh doanh Khu vực</h3><p>Huấn luyện kỹ năng bán hàng, lập kế hoạch kinh doanh cho đối tác và trưởng nhóm; Quản lý Khu vực xuất sắc nhất toàn quốc 2013 – 2015.</p></div></li>
-      <li><span class="yr">2010 – 2011</span><div><h3>Điều phối Văn phòng đại diện, Fudo Tetra Corporation (Nhật Bản)</h3><p>Thủ tục pháp lý, giao tiếp đối tác, hành chính văn phòng.</p></div></li>
-    </ol>
-  </div>
-</section>
+  </section>
 
-<section id="lien-he" class="contact">
-  <div class="wrap">
-    <h2>Cùng nhìn rõ điểm bắt đầu</h2>
-    <p style="margin-top:1.2rem">Kể tôi nghe bạn đang ở đâu và muốn đi đến đâu. Tôi sẽ phản hồi trong vòng 48 giờ.</p>
-    <div class="ways">
-      <a class="btn" href="mailto:quyen.ng@qynn.io.vn?subject=Trao%20%C4%91%E1%BB%95i%20v%E1%BB%81%20ch%C6%B0%C6%A1ng%20tr%C3%ACnh%20%C4%91%C3%A0o%20t%E1%BA%A1o">Gửi email</a>
-      <a class="btn ghost" href="https://zalo.me/0931091987" target="_blank" rel="noopener">Nhắn Zalo</a>
-      <a class="btn ghost" href="https://linkedin.com/in/quyennm31" target="_blank" rel="noopener">LinkedIn</a>
+  <section class="sec" id="linh-vuc">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Doanh nghiệp chúng tôi đồng hành</span><h2>Phù hợp nhất với</h2></div>
+        <p>Doanh nghiệp nhỏ và startup có tối đa 30 nhân sự, nơi chất lượng đội ngũ ảnh hưởng trực tiếp đến doanh số.</p>
+      </div>
+      <div class="sectors">
+        <div class="sector"><h3>Spa, thẩm mỹ viện, dịch vụ làm đẹp</h3><p>Đội ngũ phần lớn là nữ, giỏi chuyên môn nhưng cần kỹ năng tư vấn, giữ chân nhân sự và giảm tải việc vặt cho chủ doanh nghiệp.</p><p class="fit">HER SHIFT · Sell, Energy, Retain</p></div>
+        <div class="sector"><h3>Bán lẻ và bán hàng online</h3><p>Đội bán hàng và chăm sóc khách làm việc qua Zalo, Facebook, TikTok Shop, cần phản hồi nhanh, tư vấn đồng đều và giữ lửa đội ngũ.</p><p class="fit">AI SHIFT · Sales, Content</p></div>
+        <div class="sector"><h3>Startup giai đoạn đầu</h3><p>Đội ngũ trẻ, mỗi người kiêm nhiều vai, cần chuẩn hóa quy trình và ứng dụng AI bài bản thay vì rời rạc.</p><p class="fit">AI SHIFT · Starter, Ops, Champion</p></div>
+      </div>
     </div>
-    <dl>
-      <dt>Email</dt><dd><a href="mailto:quyen.ng@qynn.io.vn">quyen.ng@qynn.io.vn</a></dd>
-      <dt>Điện thoại</dt><dd><a href="tel:+84931091987">+84 931 091 987</a></dd>
-      <dt>Khu vực</dt><dd>Hà Nội · nhận chương trình online toàn quốc</dd>
-    </dl>
-  </div>
-</section>
+  </section>
+
+  <section class="startups" id="startups">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Chương trình tài trợ</span><div class="prog">Capabilities Grant for Startups</div><p class="prog-sub">Chương trình tài trợ năng lực cho doanh nghiệp nhỏ và khởi nghiệp Việt Nam</p></div>
+        <p>Doanh nghiệp nhỏ xứng đáng được đầu tư vào con người một cách bài bản như doanh nghiệp lớn. Mỗi đợt, M Capability Lab tài trợ toàn bộ chương trình cho một số doanh nghiệp được chọn.</p>
+      </div>
+      <div class="facts">
+        <div><b>Đối tượng</b><span>Doanh nghiệp nhỏ và startup tối đa 30 nhân sự, hoạt động ít nhất 6 tháng.</span></div>
+        <div><b>Điều kiện</b><span>Chủ doanh nghiệp trực tiếp đồng hành cùng chương trình.</span></div>
+        <div><b>Số suất mỗi đợt</b><span>5 doanh nghiệp: 3 suất Gói Tiêu chuẩn, 2 suất Gói Elite.</span></div>
+      </div>
+
+      <div class="pk-row">
+        <div class="pk">
+          <div class="nm">Gói Tiêu chuẩn</div>
+          <div class="val">30.000.000đ</div>
+          <div class="who">Dành cho doanh nghiệp tự đăng ký. Triển khai khoảng 4 tuần.</div>
+          <ul><li>Chẩn đoán và báo cáo phân tích nhu cầu năng lực</li><li>2–4 buổi đào tạo hoặc workshop thiết kế riêng</li><li>Coaching 1:1, bộ công cụ, đo lường và chứng nhận</li></ul>
+        </div>
+        <div class="pk elite">
+          <div class="nm">Gói Elite <span class="chip">Được giới thiệu</span></div>
+          <div class="val">50.000.000đ</div>
+          <div class="who">Dành cho doanh nghiệp được đối tác hoặc khách hàng của M Capability Lab giới thiệu.</div>
+          <ul><li>Toàn bộ quyền lợi Gói Tiêu chuẩn</li><li>Chương trình phối hợp AI SHIFT và HER SHIFT, tối đa 6 buổi</li><li>Lộ trình năng lực 12 tháng và đồng hành 3 tháng sau chương trình</li></ul>
+        </div>
+      </div>
+
+      <div class="benefits">
+        <p class="bf-head">Quyền lợi chi tiết</p>
+        <div class="bf"><span class="n">01</span><div><h4>Buổi chẩn đoán cùng chủ doanh nghiệp</h4><p>Nhìn ra gốc rễ của bài toán kinh doanh từ góc độ con người.</p></div></div>
+        <div class="bf"><span class="n">02</span><div><h4>Báo cáo phân tích nhu cầu năng lực</h4><p>Đội ngũ đang thiếu năng lực gì, cần ưu tiên xử lý điều gì trước.</p></div></div>
+        <div class="bf"><span class="n">03</span><div><h4>Chương trình đào tạo thiết kế riêng</h4><p>2–4 buổi đào tạo hoặc workshop thuộc AI SHIFT hoặc HER SHIFT.</p></div></div>
+        <div class="bf"><span class="n">04</span><div><h4>Coaching 1:1 cho chủ doanh nghiệp hoặc quản lý</h4><p>Để thay đổi được duy trì từ người dẫn dắt.</p></div></div>
+        <div class="bf"><span class="n">05</span><div><h4>Bộ công cụ áp dụng ngay</h4><p>Kịch bản, câu lệnh AI, mẫu quy trình dùng tiếp sau chương trình.</p></div></div>
+        <div class="bf"><span class="n">06</span><div><h4>Đo lường kết quả trước và sau</h4><p>Đánh giá bằng số liệu thực tế của doanh nghiệp.</p></div></div>
+        <div class="bf"><span class="n">07</span><div><h4>Chứng nhận Doanh nghiệp đồng hành M Capability Lab</h4><p>Ghi nhận doanh nghiệp đầu tư bài bản vào năng lực đội ngũ.</p></div></div>
+        <p class="bf-head">Gói Elite có thêm</p>
+        <div class="bf"><span class="n">08</span><div><h4>Phối hợp AI SHIFT và HER SHIFT</h4><p>Tối đa 6 buổi: công cụ làm việc thông minh cùng kỹ năng và tâm thế.</p></div></div>
+        <div class="bf"><span class="n">09</span><div><h4>Lộ trình phát triển năng lực 12 tháng</h4><p>Giai đoạn nào đào tạo gì, cho ai, đo lường bằng gì.</p></div></div>
+        <div class="bf"><span class="n">10</span><div><h4>Đồng hành 3 tháng sau chương trình</h4><p>Mỗi tháng một buổi check-in để kết quả được duy trì.</p></div></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Quyền lợi</th><th scope="col" class="c">Gói Tiêu chuẩn</th><th scope="col" class="c">Gói Elite</th></tr></thead>
+          <tbody>
+            <tr><td>01–02. Chẩn đoán và báo cáo phân tích nhu cầu năng lực</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+            <tr><td>03. Chương trình đào tạo thiết kế riêng</td><td class="c">2–4 buổi</td><td class="c">Tối đa 6 buổi</td></tr>
+            <tr><td>04–07. Coaching 1:1, bộ công cụ, đo lường, chứng nhận</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+            <tr><td>08. Phối hợp AI SHIFT và HER SHIFT</td><td class="c" aria-label="Không có">–</td><td class="c yes">✓</td></tr>
+            <tr><td>09. Lộ trình năng lực 12 tháng</td><td class="c" aria-label="Không có">–</td><td class="c yes">✓</td></tr>
+            <tr><td>10. Đồng hành 3 tháng sau chương trình</td><td class="c" aria-label="Không có">–</td><td class="c yes">✓</td></tr>
+            <tr class="val"><td>Giá trị tài trợ</td><td class="c">30.000.000đ</td><td class="c">50.000.000đ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="duo">
+        <div><h3>Doanh nghiệp cam kết</h3><ul><li>Chủ doanh nghiệp tham gia buổi chẩn đoán và buổi tổng kết.</li><li>Nhân sự tham gia đầy đủ các buổi.</li><li>Cung cấp số liệu trước và sau để đo lường kết quả.</li><li>Đồng ý để câu chuyện của doanh nghiệp được giới thiệu trên website M Capability Lab (có thể ẩn tên).</li></ul></div>
+        <div><h3>M Capability Lab cam kết</h3><ul><li>Bảo mật thông tin doanh nghiệp.</li><li>Triển khai đúng nội dung và thời lượng đã thống nhất.</li><li>Không ràng buộc mua thêm dịch vụ.</li></ul></div>
+      </div>
+
+      <ol class="steps">
+        <li><b>Đăng ký</b><span>Điền form đăng ký trên website.</span></li>
+        <li><b>Trò chuyện đánh giá</b><span>Trao đổi với chủ doanh nghiệp về bài toán kinh doanh.</span></li>
+        <li><b>Xác nhận tham gia</b><span>Hai bên xác nhận đồng hành qua email.</span></li>
+        <li><b>Phân tích và thiết kế</b><span>Chẩn đoán sâu, thiết kế chương trình riêng.</span></li>
+        <li><b>Triển khai và tổng kết</b><span>Kết thúc bằng buổi đo lường kết quả.</span></li>
+      </ol>
+      <p class="fine">Đợt 1 nhận đăng ký đến [NGÀY]. Với doanh nghiệp ngoài Hà Nội có buổi triển khai trực tiếp, chi phí đi lại và lưu trú của chuyên gia do doanh nghiệp chi trả theo thực tế.</p>
+      <div class="cta"><a class="btn btn-primary" href="#ung-tuyen">Đăng ký Capabilities Grant for Startups</a></div>
+    </div>
+  </section>
+
+  <section class="sec" id="nguoi-sang-lap">
+    <div class="wrap">
+      <div>
+        <span class="label">Người sáng lập</span>
+        <div class="founder">
+          <div class="photo" role="img" aria-label="Vị trí ảnh người sáng lập">[Ảnh đại diện]</div>
+          <div>
+            <h3>Nguyễn Minh Quyên</h3>
+            <p class="role">Founder &amp; Lead Trainer · MBA, CFVG</p>
+            <p class="bio">Hơn 15 năm quản lý trong môi trường đa quốc gia, dẫn dắt mạng lưới hơn 10.000 đối tác kinh doanh và phụ trách đào tạo, phát triển năng lực cho đội ngũ nội bộ lẫn mạng lưới phân phối. Chị từng nâng tỷ lệ đối tác kinh doanh hoạt động từ 28% lên hơn 80%, và trực tiếp dẫn dắt các chương trình chuyển đổi năng lực cùng AI.</p>
+          </div>
+          <div class="fstats">
+            <div><b>15+</b><span>năm quản trị con người</span></div>
+            <div><b>200+</b><span>dự án L&amp;D</span></div>
+            <div><b>1.000+</b><span>giờ tư vấn 1:1</span></div>
+            <div><b>100+</b><span>người được mentor</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec soft" id="hoi-dap">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Hỏi đáp</span><h2>Câu hỏi thường gặp</h2></div>
+        <p>Nếu chưa tìm thấy câu trả lời, vui lòng liên hệ <a href="mailto:sales@mcl.com.vn">sales@mcl.com.vn</a>.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Chương trình có nội dung cố định không?</summary><p>Không. Các giải pháp trên website là những bài toán chúng tôi thường giải quyết. Nội dung thực tế chỉ được thiết kế sau khi chúng tôi trao đổi với chủ doanh nghiệp và phân tích nhu cầu năng lực của đội ngũ.</p></details>
+        <details><summary>Chương trình triển khai online hay trực tiếp?</summary><p>Tùy tính chất vấn đề. Sau buổi chẩn đoán, chúng tôi đề xuất hình thức phù hợp nhất: online, trực tiếp hoặc kết hợp.</p></details>
+        <details><summary>Doanh nghiệp ngoài Hà Nội có tham gia được không?</summary><p>Có. Với các buổi triển khai trực tiếp ngoài Hà Nội, chi phí đi lại và lưu trú của chuyên gia do doanh nghiệp chi trả theo thực tế. Doanh nghiệp tại Hà Nội không phát sinh khoản này.</p></details>
+        <details><summary>Làm sao để nhận Gói Elite?</summary><p>Gói Elite dành cho doanh nghiệp được đối tác hoặc khách hàng của M Capability Lab giới thiệu. Khi đăng ký, vui lòng ghi tên người hoặc đơn vị giới thiệu trong form.</p></details>
+        <details><summary>Sau chương trình tài trợ, doanh nghiệp có phải mua thêm dịch vụ không?</summary><p>Không. Chúng tôi cam kết không ràng buộc mua thêm dịch vụ. Doanh nghiệp chỉ cần thực hiện các cam kết tham gia đã thống nhất.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ung-tuyen">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="label">Đăng ký</span><h2>Đăng ký Capabilities Grant for Startups</h2></div>
+        <p>Khoảng 2 phút để hoàn thành. Chúng tôi sẽ liên hệ để trò chuyện cùng doanh nghiệp về bài toán kinh doanh.</p>
+      </div>
+      <form id="applyForm" novalidate>
+        <fieldset><legend>Thông tin doanh nghiệp</legend>
+          <div class="fields">
+            <div class="field full"><label for="f1">Tên doanh nghiệp <span class="req">*</span></label><input id="f1" name="ten_dn" required autocomplete="organization"></div>
+            <div class="field"><label for="f2">Ngành nghề <span class="req">*</span></label><input id="f2" name="nganh" required></div>
+            <div class="field"><label for="f5">Tỉnh/thành phố <span class="req">*</span></label><input id="f5" name="tinh" required autocomplete="address-level1"></div>
+            <div class="field"><label for="f3">Số nhân sự <span class="req">*</span></label><select id="f3" name="nhan_su" required><option value="">Chọn</option><option>Dưới 10</option><option>10–20</option><option>21–30</option></select></div>
+            <div class="field"><label for="f4">Thời gian hoạt động <span class="req">*</span></label><select id="f4" name="hoat_dong" required><option value="">Chọn</option><option>6–12 tháng</option><option>1–3 năm</option><option>Trên 3 năm</option></select></div>
+          </div>
+        </fieldset>
+        <fieldset><legend>Người liên hệ</legend>
+          <div class="fields">
+            <div class="field full"><label for="f6">Họ tên và chức vụ <span class="req">*</span></label><input id="f6" name="ho_ten" required autocomplete="name"></div>
+            <div class="field"><label for="f7">Số điện thoại/Zalo <span class="req">*</span></label><input id="f7" name="sdt" type="tel" required autocomplete="tel"></div>
+            <div class="field"><label for="f8">Email <span class="req">*</span></label><input id="f8" name="email" type="email" required autocomplete="email"></div>
+          </div>
+        </fieldset>
+        <fieldset><legend>Bài toán của doanh nghiệp</legend>
+          <div class="fields">
+            <div class="field full"><label for="f9">Vấn đề kinh doanh lớn nhất doanh nghiệp đang gặp, liên quan đến đội ngũ? <span class="req">*</span></label><textarea id="f9" name="van_de" required></textarea></div>
+            <div class="field"><label for="f10">Mảng quan tâm</label><select id="f10" name="mang"><option value="">Chọn</option><option>AI SHIFT</option><option>HER SHIFT</option><option>Chưa rõ, cần tư vấn</option></select></div>
+            <div class="field"><label for="f11">Người hoặc đơn vị giới thiệu (nếu có)</label><input id="f11" name="gioi_thieu"></div>
+          </div>
+        </fieldset>
+        <label class="consent"><input type="checkbox" id="consent" required><span>Tôi đồng ý để M Capability Lab thu thập và sử dụng các thông tin trên (họ tên, chức vụ, số điện thoại, email) nhằm xét duyệt đăng ký và liên hệ trao đổi về chương trình Capabilities Grant for Startups. Thông tin được bảo mật, không chia sẻ cho bên thứ ba. Tôi có thể yêu cầu chỉnh sửa hoặc xóa thông tin bất cứ lúc nào qua email sales@mcl.com.vn.</span></label>
+        <button class="btn btn-primary" type="submit">Gửi đăng ký</button>
+        <p class="err" id="formErr" role="alert">Vui lòng điền đủ các mục có dấu * và tích ô đồng ý trước khi gửi.</p>
+        <p class="pnote">Bản xem trước: form chưa kết nối hệ thống nhận hồ sơ.</p>
+      </form>
+      <div class="done" id="formDone" role="status" tabindex="-1"><h3>Đã gửi đăng ký</h3><p class="muted">Cảm ơn doanh nghiệp. Chúng tôi sẽ liên hệ qua số điện thoại hoặc email đã đăng ký để trao đổi về bài toán của doanh nghiệp.</p></div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Nguyễn Minh Quyên · qynn.io.vn</div>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" aria-label="M Capability Lab, Nâng tầm năng lực nhân sự, về đầu trang"><svg viewBox="0 0 3758 578" aria-hidden="true"><defs><clipPath id="kf"><rect x="0" y="0" width="1000" height="785"/></clipPath><linearGradient id="af" x1="330" y1="270" x2="250" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient><linearGradient id="bf" x1="420" y1="520" x2="505" y2="770" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#169A70"/><stop offset="1" stop-color="#0A5A41"/></linearGradient><linearGradient id="cf" x1="715" y1="275" x2="805" y2="460" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A5A41"/><stop offset="1" stop-color="#169A70"/></linearGradient></defs><g transform="translate(-130 -235)" clip-path="url(#kf)"><polygon points="143,785 277,785 392,248 282,248" fill="url(#af)" stroke="url(#af)" stroke-width="26" stroke-linejoin="round"/><polygon points="282,248 437,248 570,785 448,785" fill="url(#bf)" stroke="url(#bf)" stroke-width="26" stroke-linejoin="round"/><polygon points="600,248 722,248 877,785 748,785" fill="url(#cf)" stroke="url(#cf)" stroke-width="26" stroke-linejoin="round"/><polygon points="448,785 577,785 722,248 588,248" fill="#169A70" stroke="#169A70" stroke-width="26" stroke-linejoin="round"/></g><path class="lg-name" d="M1057.1236330498177 321.19532199270964Q1024.1269744835965 321.19532199270964 995.9336269744836 309.08262454435Q967.7402794653706 296.9699270959903 947.0651579586877 275.45944714459296Q926.3900364520049 253.94896719319564 914.6950182260025 224.71142162818956Q903.0 195.47387606318347 903.0 160.3888213851762Q903.0 125.72144592952614 914.4861786148238 96.27506075334145Q925.9723572296476 66.82867557715676 946.8563183475092 45.31819562575943Q967.7402794653706 23.8077156743621 995.724787363305 11.90385783718105Q1023.7092952612394 0.0 1057.1236330498177 0.0Q1090.120291616039 0.0 1116.2252430133658 11.27733900364521Q1142.3301944106925 22.55467800729042 1160.2904009720532 40.7237241798299Q1178.2506075334143 58.89277035236938 1186.1865127582018 80.1944106925881L1141.9125151883354 101.0783718104496Q1131.888213851762 76.01761846901582 1109.9600546780075 60.354647630619695Q1088.0318955042528 44.691676792223575 1057.1236330498177 44.691676792223575Q1026.2153705953829 44.691676792223575 1002.4076549210207 59.31044957472662Q978.5999392466586 73.92922235722966 965.4430437424058 99.8253341433779Q952.2861482381531 125.72144592952614 952.2861482381531 160.3888213851762Q952.2861482381531 195.05619684082626 965.4430437424058 221.16114823815312Q978.5999392466586 247.26609963547997 1002.4076549210207 261.6760328068044Q1026.2153705953829 276.0859659781288 1057.1236330498177 276.0859659781288Q1088.0318955042528 276.0859659781288 1109.9600546780075 260.6318347509113Q1131.888213851762 245.17770352369382 1141.9125151883354 220.11695018226004L1186.1865127582018 241.00091130012152Q1178.2506075334143 261.884872417983 1160.2904009720532 280.2627582017011Q1142.3301944106925 298.6406439854192 1116.2252430133658 309.9179829890644Q1090.120291616039 321.19532199270964 1057.1236330498177 321.19532199270964Z M1295.6184690157959 321.19532199270964Q1272.6461117861481 321.19532199270964 1255.3124240583231 313.05057715674366Q1237.9787363304981 304.9058323207777 1228.3721142162817 290.49589914945324Q1218.7654921020655 276.0859659781288 1218.7654921020655 256.455042527339Q1218.7654921020655 238.07715674362092 1226.9102369380316 223.45838396111787Q1235.0549817739975 208.83961117861483 1252.179829890644 198.8153098420413Q1269.3046780072905 188.7910085054678 1295.2007897934386 184.61421628189552L1373.7244835965978 171.6661603888214V208.83961117861483L1304.3897326852978 220.9523086269745Q1285.5941676792222 224.29374240583235 1276.8229040097203 232.85616646415554Q1268.0516403402187 241.41859052247875 1268.0516403402187 254.78432563791011Q1268.0516403402187 267.73238153098424 1277.8671020656136 275.87712636695016Q1287.6825637910085 284.02187120291615 1303.136695018226 284.02187120291615Q1322.3499392466586 284.02187120291615 1336.759872417983 275.66828675577153Q1351.1698055893073 267.314702308627 1359.1057108140947 253.3224483596598Q1367.041616038882 239.3301944106926 1367.041616038882 222.2053462940462V164.14793438639126Q1367.041616038882 147.4407654921021 1354.7200789793437 136.78994532199272Q1342.3985419198057 126.13912515188338 1321.9322600243013 126.13912515188338Q1303.136695018226 126.13912515188338 1289.1444410692588 135.95458687727827Q1275.1521871202915 145.77004860267317 1268.469319562576 161.22417982989066L1229.2074726609962 141.59325637910086Q1235.4726609963548 124.88608748481167 1249.6737545565006 112.14687120291617Q1263.8748481166465 99.40765492102068 1282.8792527339006 92.30710814094778Q1301.8836573511544 85.20656136087487 1323.185297691373 85.20656136087487Q1349.9167679222357 85.20656136087487 1370.5918894289184 95.23086269744837Q1391.2670109356013 105.25516403402187 1402.7531895504253 123.00653098420413Q1414.239368165249 140.7578979343864 1414.239368165249 164.14793438639126V316.18317132442286H1369.1300121506683V275.2506075334144L1378.7366342648845 276.50364520048606Q1370.8007290400972 290.2870595382746 1358.4791919805589 300.3113608748481Q1346.1576549210206 310.33566221142166 1330.4946840826246 315.76549210206565Q1314.8317132442285 321.19532199270964 1295.6184690157959 321.19532199270964Z M1469.3730255164035 399.7190157958688V90.21871202916162H1514.4823815309842V136.99878493317135L1509.0525516403402 126.13912515188338Q1521.582928311057 106.92588092345079 1542.4668894289184 96.06622114216283Q1563.35085054678 85.20656136087487 1590.0823207776427 85.20656136087487Q1622.2436208991494 85.20656136087487 1647.930893074119 100.66069258809236Q1673.6181652490886 116.11482381530985 1688.4457776427703 142.84629404617255Q1703.273390036452 169.57776427703524 1703.273390036452 202.9921020656136Q1703.273390036452 236.406439854192 1688.4457776427703 263.1379100850547Q1673.6181652490886 289.8693803159174 1648.1397326852975 305.5323511543135Q1622.6613001215067 321.19532199270964 1590.0823207776427 321.19532199270964Q1563.7685297691373 321.19532199270964 1542.25804981774 310.33566221142166Q1520.7475698663427 299.4760024301337 1509.0525516403402 279.0097205346294L1516.5707776427703 270.2384568651276V399.7190157958688ZM1585.4878493317133 277.3390036452005Q1605.5364520048602 277.3390036452005 1620.9905832320778 267.7323815309842Q1636.4447144592953 258.12575941676795 1645.4248177399759 241.20975091130015Q1654.4049210206563 224.29374240583235 1654.4049210206563 202.9921020656136Q1654.4049210206563 181.6904617253949 1645.4248177399759 164.9832928311057Q1636.4447144592953 148.27612393681653 1620.9905832320778 138.66950182260024Q1605.5364520048602 129.06287970838397 1585.4878493317133 129.06287970838397Q1565.8569258809234 129.06287970838397 1550.1939550425273 138.66950182260024Q1534.5309842041313 148.27612393681653 1525.5508809234507 164.9832928311057Q1516.5707776427703 181.6904617253949 1516.5707776427703 202.9921020656136Q1516.5707776427703 224.29374240583235 1525.5508809234507 241.20975091130015Q1534.5309842041313 258.12575941676795 1550.1939550425273 267.7323815309842Q1565.8569258809234 277.3390036452005 1585.4878493317133 277.3390036452005Z M1816.8821385176186 321.19532199270964Q1793.9097812879709 321.19532199270964 1776.5760935601459 313.05057715674366Q1759.2424058323209 304.9058323207777 1749.6357837181044 290.49589914945324Q1740.0291616038883 276.0859659781288 1740.0291616038883 256.455042527339Q1740.0291616038883 238.07715674362092 1748.1739064398544 223.45838396111787Q1756.3186512758202 208.83961117861483 1773.4434993924667 198.8153098420413Q1790.5683475091132 188.7910085054678 1816.4644592952613 184.61421628189552L1894.9881530984205 171.6661603888214V208.83961117861483L1825.6534021871205 220.9523086269745Q1806.857837181045 224.29374240583235 1798.086573511543 232.85616646415554Q1789.3153098420414 241.41859052247875 1789.3153098420414 254.78432563791011Q1789.3153098420414 267.73238153098424 1799.1307715674363 275.87712636695016Q1808.9462332928313 284.02187120291615 1824.4003645200487 284.02187120291615Q1843.6136087484813 284.02187120291615 1858.0235419198057 275.66828675577153Q1872.43347509113 267.314702308627 1880.3693803159174 253.3224483596598Q1888.3052855407047 239.3301944106926 1888.3052855407047 222.2053462940462V164.14793438639126Q1888.3052855407047 147.4407654921021 1875.9837484811665 136.78994532199272Q1863.6622114216284 126.13912515188338 1843.195929526124 126.13912515188338Q1824.4003645200487 126.13912515188338 1810.4081105710816 135.95458687727827Q1796.4158566221142 145.77004860267317 1789.7329890643987 161.22417982989066L1750.471142162819 141.59325637910086Q1756.7363304981775 124.88608748481167 1770.9374240583234 112.14687120291617Q1785.1385176184692 99.40765492102068 1804.1429222357233 92.30710814094778Q1823.1473268529771 85.20656136087487 1844.4489671931958 85.20656136087487Q1871.1804374240585 85.20656136087487 1891.8555589307412 95.23086269744837Q1912.530680437424 105.25516403402187 1924.016859052248 123.00653098420413Q1935.5030376670718 140.7578979343864 1935.5030376670718 164.14793438639126V316.18317132442286H1890.393681652491V275.2506075334144L1900.0003037667072 276.50364520048606Q1892.06439854192 290.2870595382746 1879.7428614823816 300.3113608748481Q1867.4213244228433 310.33566221142166 1851.7583535844474 315.76549210206565Q1836.0953827460512 321.19532199270964 1816.8821385176186 321.19532199270964Z M2111.3459902794657 321.19532199270964Q2085.03219927096 321.19532199270964 2063.5217193195626 310.33566221142166Q2042.0112393681654 299.4760024301337 2030.316221142163 279.0097205346294L2035.746051032807 270.2384568651276V316.18317132442286H1990.6366950182262V0.0H2037.834447144593V136.99878493317135L2030.316221142163 126.13912515188338Q2042.8465978128797 106.92588092345079 2063.7305589307416 96.06622114216283Q2084.614520048603 85.20656136087487 2111.3459902794657 85.20656136087487Q2143.507290400972 85.20656136087487 2169.1945625759417 100.66069258809236Q2194.8818347509114 116.11482381530985 2209.709447144593 142.84629404617255Q2224.5370595382747 169.57776427703524 2224.5370595382747 202.9921020656136Q2224.5370595382747 236.406439854192 2209.709447144593 263.1379100850547Q2194.8818347509114 289.8693803159174 2169.4034021871203 305.5323511543135Q2143.9249696233296 321.19532199270964 2111.3459902794657 321.19532199270964ZM2106.751518833536 277.3390036452005Q2126.800121506683 277.3390036452005 2142.2542527339006 267.7323815309842Q2157.708383961118 258.12575941676795 2166.6884872417986 241.20975091130015Q2175.668590522479 224.29374240583235 2175.668590522479 202.9921020656136Q2175.668590522479 181.6904617253949 2166.6884872417986 164.9832928311057Q2157.708383961118 148.27612393681653 2142.2542527339006 138.66950182260024Q2126.800121506683 129.06287970838397 2106.751518833536 129.06287970838397Q2087.120595382746 129.06287970838397 2071.45762454435 138.66950182260024Q2055.794653705954 148.27612393681653 2046.8145504252734 164.9832928311057Q2037.834447144593 181.6904617253949 2037.834447144593 202.9921020656136Q2037.834447144593 224.29374240583235 2046.8145504252734 241.20975091130015Q2055.794653705954 258.12575941676795 2071.45762454435 267.7323815309842Q2087.120595382746 277.3390036452005 2106.751518833536 277.3390036452005Z M2270.48177399757 316.18317132442286V90.21871202916162H2317.679526123937V316.18317132442286ZM2270.48177399757 59.31044957472665V5.012150668286779H2317.679526123937V59.31044957472665Z M2372.8131834750916 316.18317132442286V0.0H2420.0109356014586V316.18317132442286Z M2475.144592952613 316.18317132442286V90.21871202916162H2522.34234507898V316.18317132442286ZM2475.144592952613 59.31044957472665V5.012150668286779H2522.34234507898V59.31044957472665Z M2675.2129404617262 318.6892466585662Q2639.7102065613617 318.6892466585662 2620.079283110572 298.64064398541916Q2600.448359659782 278.59204131227216 2600.448359659782 242.2539489671932V132.82199270959904H2560.7688335358453V90.21871202916162H2567.0340218712035Q2582.9058323207782 90.21871202916162 2591.67709599028 81.02976913730257Q2600.448359659782 71.84082624544351 2600.448359659782 55.96901579586881V38.426488456865115H2647.646111786149V90.21871202916162H2699.0206561360883V132.82199270959904H2647.646111786149V240.16555285540704Q2647.646111786149 251.8605710814095 2651.405224787364 260.00531591737547Q2655.1643377885794 268.15006075334145 2663.5179222357237 272.5356925880924Q2671.871506682868 276.92132442284327 2685.2372417982997 276.92132442284327Q2688.5786755771574 276.92132442284327 2692.75546780073 276.50364520048606Q2696.932260024302 276.0859659781288 2700.6913730255174 275.6682867557716V316.18317132442286Q2694.843863912516 317.01852976913733 2687.743317132443 317.85388821385175Q2680.64277035237 318.6892466585662 2675.2129404617262 318.6892466585662Z M2766.6846901579593 408.07260024301337Q2758.331105710815 408.07260024301337 2750.186360874849 406.6107229647631Q2742.0416160388827 405.1488456865128 2735.358748481167 402.2250911300122V361.7102065613609Q2740.370899149454 362.9632442284326 2747.471445929527 364.00744228432563Q2754.5719927095997 365.05164034021874 2761.2548602673155 365.05164034021874Q2780.8857837181054 365.05164034021874 2790.283566221143 356.48921628189555Q2799.6813487241807 347.9267922235723 2807.1995747266105 330.38426488456867L2822.2360267314707 296.13456865127586L2821.4006682867566 335.81409477521265L2723.663730255165 90.21871202916162H2774.2029161603896L2846.4614216281902 278.59204131227216H2829.336573511544L2901.177399756987 90.21871202916162H2952.1342648845693L2852.3089307411915 340.82624544349943Q2844.373025516404 360.87484811664643 2832.469167679223 376.1201397326853Q2820.565309842042 391.3654313487242 2804.4846597812884 399.7190157958688Q2788.404009720535 408.07260024301337 2766.6846901579593 408.07260024301337Z M3061.983900364521 316.18317132442286V5.012150668286779H3111.270048602674V272.32685297691376H3245.762758201702V316.18317132442286Z M3350.182563791009 321.19532199270964Q3327.2102065613617 321.19532199270964 3309.8765188335365 313.05057715674366Q3292.5428311057117 304.9058323207777 3282.9362089914957 290.49589914945324Q3273.3295868772793 276.0859659781288 3273.3295868772793 256.455042527339Q3273.3295868772793 238.07715674362092 3281.474331713245 223.45838396111787Q3289.619076549211 208.83961117861483 3306.743924665858 198.8153098420413Q3323.868772782504 188.7910085054678 3349.764884568652 184.61421628189552L3428.288578371811 171.6661603888214V208.83961117861483L3358.953827460511 220.9523086269745Q3340.1582624544358 224.29374240583235 3331.386998784934 232.85616646415554Q3322.6157351154325 241.41859052247875 3322.6157351154325 254.78432563791011Q3322.6157351154325 267.73238153098424 3332.4311968408274 275.87712636695016Q3342.246658566222 284.02187120291615 3357.7007897934395 284.02187120291615Q3376.914034021872 284.02187120291615 3391.3239671931965 275.66828675577153Q3405.733900364521 267.314702308627 3413.6698055893085 253.3224483596598Q3421.605710814096 239.3301944106926 3421.605710814096 222.2053462940462V164.14793438639126Q3421.605710814096 147.4407654921021 3409.2841737545577 136.78994532199272Q3396.9626366950192 126.13912515188338 3376.496354799515 126.13912515188338Q3357.7007897934395 126.13912515188338 3343.7085358444724 135.95458687727827Q3329.7162818955053 145.77004860267317 3323.0334143377895 161.22417982989066L3283.77156743621 141.59325637910086Q3290.0367557715686 124.88608748481167 3304.237849331714 112.14687120291617Q3318.43894289186 99.40765492102068 3337.4433475091137 92.30710814094778Q3356.447752126368 85.20656136087487 3377.7493924665864 85.20656136087487Q3404.480862697449 85.20656136087487 3425.155984204132 95.23086269744837Q3445.831105710815 105.25516403402187 3457.317284325639 123.00653098420413Q3468.803462940463 140.7578979343864 3468.803462940463 164.14793438639126V316.18317132442286H3423.694106925882V275.2506075334144L3433.3007290400983 276.50364520048606Q3425.364823815311 290.2870595382746 3413.043286755773 300.3113608748481Q3400.7217496962344 310.33566221142166 3385.058778857838 315.76549210206565Q3369.395808019442 321.19532199270964 3350.182563791009 321.19532199270964Z M3644.646415552856 321.19532199270964Q3618.3326245443504 321.19532199270964 3596.822144592953 310.33566221142166Q3575.311664641556 299.4760024301337 3563.6166464155535 279.0097205346294L3569.0464763061977 270.2384568651276V316.18317132442286H3523.937120291617V0.0H3571.134872417984V136.99878493317135L3563.6166464155535 126.13912515188338Q3576.1470230862706 106.92588092345079 3597.030984204132 96.06622114216283Q3617.9149453219934 85.20656136087487 3644.646415552856 85.20656136087487Q3676.807715674363 85.20656136087487 3702.4949878493326 100.66069258809236Q3728.182260024302 116.11482381530985 3743.009872417984 142.84629404617255Q3757.8374848116655 169.57776427703524 3757.8374848116655 202.9921020656136Q3757.8374848116655 236.406439854192 3743.009872417984 263.1379100850547Q3728.182260024302 289.8693803159174 3702.703827460511 305.5323511543135Q3677.22539489672 321.19532199270964 3644.646415552856 321.19532199270964ZM3640.0519441069264 277.3390036452005Q3660.1005467800737 277.3390036452005 3675.554678007291 267.7323815309842Q3691.0088092345086 258.12575941676795 3699.988912515189 241.20975091130015Q3708.9690157958694 224.29374240583235 3708.9690157958694 202.9921020656136Q3708.9690157958694 181.6904617253949 3699.988912515189 164.9832928311057Q3691.0088092345086 148.27612393681653 3675.554678007291 138.66950182260024Q3660.1005467800737 129.06287970838397 3640.0519441069264 129.06287970838397Q3620.421020656137 129.06287970838397 3604.758049817741 138.66950182260024Q3589.0950789793446 148.27612393681653 3580.1149756986642 164.9832928311057Q3571.134872417984 181.6904617253949 3571.134872417984 202.9921020656136Q3571.134872417984 224.29374240583235 3580.1149756986642 241.20975091130015Q3589.0950789793446 258.12575941676795 3604.758049817741 267.7323815309842Q3620.421020656137 277.3390036452005 3640.0519441069264 277.3390036452005Z"/><path class="lg-desc" d="M914.2773390036452 550.0V466.5476913730255H928.2612393681653L966.604191980559 523.1599331713244V466.5476913730255H981.82859963548V550.0H967.84469927096L929.5017466585663 494.4027187120292V550.0Z M1049.9146637049412 458.7663274605103 1064.2368842395706 441.6247721749696H1076.3036369734712L1090.6258575081004 458.7663274605103H1078.4463313841636L1070.3266473015392 448.84226913730254L1062.0941898288781 458.7663274605103ZM1031.4198277389632 550.0 1060.1770421982585 466.5476913730255H1080.1379322347104L1109.007920084042 550.0H1092.9940986988659L1087.017109026934 532.4073511543135H1053.4106387960712L1047.4336491241393 550.0ZM1057.808801007493 519.1000911300122H1082.6189468155123L1070.2138739115026 482.22319258809233Z M1158.5991481875253 550.0V466.5476913730255H1172.5830485520453L1210.926001164439 523.1599331713244V466.5476913730255H1226.1504088193599V550.0H1212.16650845484L1173.8235558424462 494.4027187120292V550.0Z M1317.1294710662214 551.1277339003645Q1306.6415457928313 551.1277339003645 1298.860181880316 547.5189854191981Q1291.078817967801 543.9102369380316 1285.9476287211423 537.7640871810449Q1280.8164394744838 531.6179374240584 1278.2790381986636 524.0057335965978Q1275.7416369228433 516.3935297691373 1275.7416369228433 508.3866190765492Q1275.7416369228433 500.3797083839611 1278.2790381986636 492.71111786148236Q1280.8164394744838 485.04252733900364 1286.0040154161607 478.896377582017Q1291.1915913578373 472.7502278250304 1299.0857286603891 469.0850926488457Q1306.9798659629407 465.419957472661 1317.4677912363306 465.419957472661Q1325.7002487089917 465.419957472661 1331.6208516859056 467.50626518833536Q1337.5414546628192 469.5925729040097 1341.5449100091132 472.8630012150668Q1345.5483653554072 476.1334295261239 1347.972993241191 479.7985647023086Q1350.3976211269746 483.46369987849334 1351.6381284173756 486.73412818955046Q1352.8786357077765 490.0045565006075 1353.3297292679224 492.0908642162819Q1353.7808228280683 494.17717193195625 1353.7808228280683 494.17717193195625H1338.4436417831107Q1338.4436417831107 494.17717193195625 1338.0489349179832 492.65473116646416Q1337.6542280528556 491.13229040097207 1336.4137207624547 488.87682260024303Q1335.1732134720537 486.621354799514 1332.8613589763063 484.36588699878496Q1330.549504480559 482.11041919805587 1326.8279826093562 480.5879784325638Q1323.1064607381534 479.0655376670717 1317.580564626367 479.0655376670717Q1310.9269346142164 479.0655376670717 1306.021292147631 481.5465522478736Q1301.1156496810452 484.02756682867556 1297.845221369988 488.2001822600243Q1294.574793058931 492.372797691373 1292.9959655984208 497.56037363304984Q1291.4171381379103 502.7479495747266 1291.4171381379103 508.1610722964763Q1291.4171381379103 515.4913426488457 1294.3492462788581 522.2577460510329Q1297.2813544198057 529.0241494532199 1303.089184006683 533.3095382746051Q1308.8970135935604 537.5949270959903 1317.4677912363306 537.5949270959903Q1327.3918495595385 537.5949270959903 1333.1996791464157 532.1818043742405Q1339.007508733293 526.7686816524908 1339.796922463548 517.7468104495747H1317.0166976761848V505.5672843256379H1354.6830099483598V511.7698207776428Q1354.6830099483598 524.7387606318348 1349.720980786756 533.4786983596598Q1344.7589516251521 542.2186360874848 1336.2445606774 546.6731849939247Q1327.7301697296477 551.1277339003645 1317.1294710662214 551.1277339003645Z M1519.0484855963955 550.0V479.85495139732683H1493.3361526680844V466.5476913730255H1560.097999569664V479.85495139732683H1534.3856666413528V550.0Z M1664.9481887910085 444.218560145808 1652.8814360571082 423.8065765492102H1667.090883201701L1676.4510745747266 444.10578675577153ZM1628.184063639125 458.7663274605103 1642.5062841737545 441.6247721749696H1654.573036907655L1668.8952574422842 458.7663274605103H1656.7157313183475L1648.596047235723 448.84226913730254L1640.363589763062 458.7663274605103ZM1609.6892276731471 550.0 1638.4464421324424 466.5476913730255H1658.4073321688943L1687.277320018226 550.0H1671.2634986330497L1665.2865089611178 532.4073511543135H1631.680038730255L1625.7030490583231 550.0ZM1636.0782009416769 519.1000911300122H1660.8883467496962L1648.4832738456864 482.22319258809233Z M1736.8685481217094 550.0V466.5476913730255H1757.2805317183072L1778.1436088750506 511.7698207776428L1799.4577795919402 466.5476913730255H1819.5314430184287V550.0H1804.419808753544V489.6662363304982L1785.2483324473471 529.8135631834751H1771.0388853027544L1751.980182386594 489.44068955042525V550.0Z M1958.1845857381534 550.0V466.5476913730255H1972.1684861026733L2010.511438715067 523.1599331713244V466.5476913730255H2025.735846369988V550.0H2011.751946005468L1973.4089933930743 494.4027187120292V550.0Z M2114.1211206460107 458.6535540704739Q2108.256904364115 458.6535540704739 2104.5353824929125 456.96195321992707Q2100.8138606217094 455.2703523693803 2098.7275529060353 452.6765643985419Q2096.6412451903607 450.0827764277035 2095.7954447650873 447.5453751518833Q2094.949644339814 445.00797387606315 2094.7804842547594 443.3163730255164Q2094.6113241697044 441.6247721749696 2094.6113241697044 441.6247721749696H2104.7609292729853Q2104.7609292729853 441.6247721749696 2104.986476053058 442.8652794653706Q2105.212022833131 444.10578675577153 2106.0578232584044 445.7410009113001Q2106.903623683678 447.37621506682865 2108.8207713142974 448.6167223572296Q2110.737918944917 449.8572296476306 2114.1211206460107 449.8572296476306Q2117.5043223471043 449.8572296476306 2119.421469977724 448.6167223572296Q2121.3386176083436 447.37621506682865 2122.2408047286353 445.7410009113001Q2123.142991848927 444.10578675577153 2123.368538629 442.8652794653706Q2123.5940854090727 441.6247721749696 2123.5940854090727 441.6247721749696H2133.7436905123536Q2133.7436905123536 441.6247721749696 2133.5745304272987 443.3163730255164Q2133.405370342244 445.00797387606315 2132.5031832219524 447.5453751518833Q2131.6009961016607 450.0827764277035 2129.514688385986 452.6765643985419Q2127.428380670312 455.2703523693803 2123.706858799109 456.96195321992707Q2119.9853369279062 458.6535540704739 2114.1211206460107 458.6535540704739ZM2075.3270744734714 550.0 2104.0842889327664 466.5476913730255H2124.0451789692183L2152.9151668185505 550.0H2136.901345433374L2130.9243557614423 532.4073511543135H2097.3178855305796L2091.3408958586474 550.0ZM2101.716047742001 519.1000911300122H2126.5261935500207L2114.1211206460107 482.22319258809233Z M2202.5063949220335 550.0V466.5476913730255H2216.490295286553L2254.833247898947 523.1599331713244V466.5476913730255H2270.0576555538682V550.0H2256.073755189348L2217.7308025769544 494.4027187120292V550.0Z M2361.036717800729 551.1277339003645Q2350.548792527339 551.1277339003645 2342.767428614824 547.5189854191981Q2334.986064702309 543.9102369380316 2329.85487545565 537.7640871810449Q2324.7236862089912 531.6179374240584 2322.186284933171 524.0057335965978Q2319.6488836573512 516.3935297691373 2319.6488836573512 508.3866190765492Q2319.6488836573512 500.3797083839611 2322.186284933171 492.71111786148236Q2324.7236862089912 485.04252733900364 2329.9112621506683 478.896377582017Q2335.098838092345 472.7502278250304 2342.9929753948963 469.0850926488457Q2350.887112697448 465.419957472661 2361.3750379708385 465.419957472661Q2369.6074954434994 465.419957472661 2375.528098420413 467.50626518833536Q2381.4487013973267 469.5925729040097 2385.452156743621 472.8630012150668Q2389.455612089915 476.1334295261239 2391.8802399756987 479.7985647023086Q2394.3048678614823 483.46369987849334 2395.5453751518835 486.73412818955046Q2396.785882442284 490.0045565006075 2397.2369760024303 492.0908642162819Q2397.688069562576 494.17717193195625 2397.688069562576 494.17717193195625H2382.3508885176184Q2382.3508885176184 494.17717193195625 2381.956181652491 492.65473116646416Q2381.5614747873633 491.13229040097207 2380.320967496962 488.87682260024303Q2379.0804602065614 486.621354799514 2376.768605710814 484.36588699878496Q2374.456751215067 482.11041919805587 2370.735229343864 480.5879784325638Q2367.013707472661 479.0655376670717 2361.4878113608747 479.0655376670717Q2354.834181348724 479.0655376670717 2349.928538882138 481.5465522478736Q2345.0228964155526 484.02756682867556 2341.7524681044956 488.2001822600243Q2338.4820397934386 492.372797691373 2336.903212332928 497.56037363304984Q2335.324384872418 502.7479495747266 2335.324384872418 508.1610722964763Q2335.324384872418 515.4913426488457 2338.256493013366 522.2577460510329Q2341.1886011543133 529.0241494532199 2346.9964307411906 533.3095382746051Q2352.804260328068 537.5949270959903 2361.3750379708385 537.5949270959903Q2371.299096294046 537.5949270959903 2377.1069258809234 532.1818043742405Q2382.9147554678007 526.7686816524908 2383.7041691980558 517.7468104495747H2360.9239444106925V505.5672843256379H2398.5902566828677V511.7698207776428Q2398.5902566828677 524.7387606318348 2393.6282275212634 533.4786983596598Q2388.6661983596596 542.2186360874848 2380.1518074119076 546.6731849939247Q2371.6374164641556 551.1277339003645 2361.036717800729 551.1277339003645Z M2537.243399402592 550.0V466.5476913730255H2552.5805804475494V536.6927399756987H2594.0811879809635V550.0Z M2676.827792755164 551.1277339003645Q2667.5803747721748 551.1277339003645 2660.024557639733 547.5753721142163Q2652.4687405072905 544.023010328068 2648.0705782958685 536.8055133657351Q2643.672416084447 529.5880164034022 2643.672416084447 518.6489975698663V466.5476913730255H2659.0095971294045V518.6489975698663Q2659.0095971294045 526.3175880923451 2663.3513726458077 531.5051640340218Q2667.6931481622114 536.6927399756987 2676.827792755164 536.6927399756987Q2686.075210738153 536.6927399756987 2690.4733729495747 531.5051640340218Q2694.8715351609962 526.3175880923451 2694.8715351609962 518.6489975698663V466.5476913730255H2706.1488741646417Q2710.5470363760633 466.5476913730255 2710.5470363760633 461.923982381531V454.3681652490887H2723.4032028402185V462.26230255164035Q2723.4032028402185 467.90097205346297 2720.3019346142164 471.39694714459296Q2717.200666388214 474.89292223572295 2711.1109033262455 474.89292223572295H2710.095942815917V518.6489975698663Q2710.095942815917 529.5880164034022 2705.6977806044956 536.8055133657351Q2701.299618393074 544.023010328068 2693.80018795565 547.5753721142163Q2686.300757518226 551.1277339003645 2676.827792755164 551.1277339003645ZM2677.617206485419 577.0656136087484Q2673.8956846142164 577.0656136087484 2671.5274434234507 574.5845990279465Q2669.1592022326854 572.1035844471446 2669.1592022326854 568.7203827460511Q2669.1592022326854 565.224407654921 2671.5274434234507 562.743393074119Q2673.8956846142164 560.2623784933171 2677.617206485419 560.2623784933171Q2681.2259549665855 560.2623784933171 2683.594196157351 562.743393074119Q2685.9624373481165 565.224407654921 2685.9624373481165 568.7203827460511Q2685.9624373481165 572.1035844471446 2683.594196157351 574.5845990279465Q2681.2259549665855 577.0656136087484 2677.617206485419 577.0656136087484Z M2813.705624746861 551.1277339003645Q2803.5560196435804 551.1277339003645 2795.94381581612 547.4625987241798Q2788.3316119886595 543.7974635479951 2783.2004227420007 537.6513137910085Q2778.069233495342 531.5051640340218 2775.5318322195217 523.8929602065614Q2772.994430943702 516.2807563791008 2772.994430943702 508.27384568651274Q2772.994430943702 500.2669349939247 2775.5318322195217 492.5983444714459Q2778.069233495342 484.9297539489672 2783.2004227420007 478.78360419198054Q2788.3316119886595 472.6374544349939 2795.94381581612 469.02870595382745Q2803.5560196435804 465.419957472661 2813.705624746861 465.419957472661Q2822.163628999595 465.419957472661 2828.2533920615633 467.5626518833536Q2834.3431551235317 469.7053462940462 2838.4029971648442 473.0885479951397Q2842.4628392061563 476.4717496962333 2844.88746709194 480.30604495747264Q2847.3120949777235 484.140340218712 2848.5526022681242 487.52354191980555Q2849.7931095585254 490.90674362089914 2850.187816423653 493.04943803159176Q2850.582523288781 495.19213244228433 2850.582523288781 495.19213244228433H2835.3581156338596Q2835.3581156338596 495.19213244228433 2834.963408768732 493.61330498177404Q2834.5687019036045 492.0344775212637 2833.3845813082216 489.6098496354799Q2832.2004607128392 487.1852217496962 2829.8322195220735 484.8169805589307Q2827.463978331308 482.44873936816526 2823.5732963750506 480.8699119076549Q2819.682614418793 479.2910844471446 2813.9311715269337 479.2910844471446Q2807.6158616848925 479.2910844471446 2802.8793793033615 481.7157123329283Q2798.1428969218305 484.140340218712 2794.98524200081 488.31295565006076Q2791.8275870797893 492.4855710814095 2790.3051463142974 497.67314702308624Q2788.782705548805 502.86072296476306 2788.782705548805 508.27384568651274Q2788.782705548805 513.6869684082625 2790.3051463142974 518.818157654921Q2791.8275870797893 523.9493469015796 2794.98524200081 528.1219623329283Q2798.1428969218305 532.294577764277 2802.8793793033615 534.775592345079Q2807.6158616848925 537.2566069258809 2813.9311715269337 537.2566069258809Q2819.682614418793 537.2566069258809 2823.5732963750506 535.6213927703523Q2827.463978331308 533.9861786148238 2829.8322195220735 531.6179374240583Q2832.2004607128392 529.2496962332929 2833.3845813082216 526.8814550425274Q2834.5687019036045 524.5132138517619 2834.963408768732 522.8779996962332Q2835.3581156338596 521.2427855407047 2835.3581156338596 521.2427855407047H2850.582523288781Q2850.582523288781 521.2427855407047 2850.187816423653 523.3854799513973Q2849.7931095585254 525.5281743620899 2848.5526022681242 528.9677627582016Q2847.3120949777235 532.4073511543135 2844.88746709194 536.1852597205345Q2842.4628392061563 539.9631682867557 2838.4029971648442 543.4027566828674Q2834.3431551235317 546.8423450789793 2828.2533920615633 548.9850394896719Q2822.163628999595 551.1277339003645 2813.705624746861 551.1277339003645Z M2989.235666008505 550.0V466.5476913730255H3003.219566373025L3041.5625189854186 523.1599331713244V466.5476913730255H3056.78692664034V550.0H3042.80302627582L3004.460073663426 494.4027187120292V550.0Z M3106.378154743823 550.0V466.5476913730255H3121.7153357887805V500.83080194410695H3156.562313310044V466.5476913730255H3171.8994943550015V550.0H3156.562313310044V514.1380619684082H3121.7153357887805V550.0Z M3239.985558424463 458.7663274605103 3254.3077789590925 441.6247721749696H3266.3745316929926L3280.6967522276223 458.7663274605103H3268.5172261036855L3260.397542021061 448.84226913730254L3252.1650845483996 458.7663274605103ZM3221.490722458485 550.0 3250.24793691778 466.5476913730255H3270.208826954232L3299.078814803564 550.0H3283.0649934183875L3277.088003746456 532.4073511543135H3243.481533515593L3237.504543843661 550.0ZM3247.8796957270147 519.1000911300122H3272.6898415350342L3260.2847686310242 482.22319258809233Z M3348.670042907047 550.0V466.5476913730255H3362.6539432715667L3400.9968958839604 523.1599331713244V466.5476913730255H3416.221303538882V550.0H3402.2374031743616L3363.894450561968 494.4027187120292V550.0Z M3588.142596319359 551.1277339003645Q3580.361232406844 551.1277339003645 3574.835336295058 549.2105862697449Q3569.309440183272 547.2934386391252 3565.6443050070875 544.248557108141Q3561.9791698309027 541.2036755771568 3559.8364754202103 537.7640871810449Q3557.6937810095174 534.3244987849332 3556.622433804171 531.279617253949Q3555.551086598825 528.2347357229647 3555.2127664287154 526.317588092345Q3554.874446258606 524.4004404617253 3554.874446258606 524.4004404617253H3570.4371740836364Q3570.4371740836364 524.4004404617253 3570.7191075587275 525.7537211421628Q3571.0010410338186 527.1070018226003 3572.016001544147 529.1933095382747Q3573.030962054475 531.2796172539489 3575.004496380113 533.3095382746051Q3576.978030705751 535.3394592952612 3580.304845711826 536.7491266707168Q3583.6316607179015 538.1587940461725 3588.5936898795053 538.1587940461725Q3596.262280401984 538.1587940461725 3600.2657357482776 534.7192056500608Q3604.269191094572 531.2796172539489 3604.269191094572 526.2048147023086Q3604.269191094572 521.9194258809234 3601.2243095635877 519.3820246051032Q3598.1794280326035 516.8446233292831 3592.2024383606717 515.6041160388821L3581.1506461370996 513.2358748481166Q3574.7225629050217 511.8825941676792 3569.1402800982173 509.17603280680436Q3563.557997291413 506.4694714459295 3560.1747955903193 501.845762454435Q3556.7915938892256 497.22205346294044 3556.7915938892256 490.0045565006075Q3556.7915938892256 482.44873936816526 3560.569502455447 476.9228432563791Q3564.347411021668 471.39694714459296 3571.0010410338186 468.408452308627Q3577.6546710459693 465.419957472661 3586.563768858849 465.419957472661Q3595.021773111583 465.419957472661 3600.547669223369 467.90097205346297Q3606.0735653351553 470.3819866342649 3609.4003803412306 473.99073511543133Q3612.727195347306 477.5994835965978 3614.3060228078166 481.20823207776425Q3615.8848502683268 484.8169805589307 3616.3923305234907 487.2979951397327Q3616.8998107786547 489.77900972053465 3616.8998107786547 489.77900972053465H3601.9009499038066Q3601.9009499038066 489.77900972053465 3601.449856343661 488.0310221749696Q3600.998762783515 486.2830346294046 3599.4199353230047 484.02756682867556Q3597.8411078624945 481.7720990279465 3594.6834529414737 480.0241114823815Q3591.525798020453 478.27612393681653 3586.2254486887396 478.27612393681653Q3578.6696315562976 478.27612393681653 3575.2300431601857 481.6593256379101Q3571.7904547640737 485.04252733900364 3571.7904547640737 488.98959599027944Q3571.7904547640737 493.04943803159176 3574.9481096850946 495.3049058323208Q3578.1057646061154 497.56037363304984 3583.406113937828 498.8008809234508L3595.247319891656 501.2818955042527Q3601.9009499038066 502.7479495747266 3607.4268460155927 505.68005771567437Q3612.9527421273788 508.61216585662214 3616.223170438436 513.4050349331714Q3619.4935987494932 518.1979040097206 3619.4935987494932 525.3026275820171Q3619.4935987494932 532.52012454435 3615.8848502683268 538.3843408262455Q3612.2761017871603 544.248557108141 3605.2841516049 547.6881455042528Q3598.29220142264 551.1277339003645 3588.142596319359 551.1277339003645Z M3702.2402035236933 551.1277339003645Q3692.992785540704 551.1277339003645 3685.436968408262 547.5753721142163Q3677.88115127582 544.023010328068 3673.4829890643978 536.8055133657351Q3669.084826852976 529.5880164034022 3669.084826852976 518.6489975698663V466.5476913730255H3684.422007897934V518.6489975698663Q3684.422007897934 526.3175880923451 3688.763783414337 531.5051640340218Q3693.1055589307407 536.6927399756987 3702.2402035236933 536.6927399756987Q3711.4876215066824 536.6927399756987 3715.885783718104 531.5051640340218Q3720.2839459295255 526.3175880923451 3720.2839459295255 518.6489975698663V466.5476913730255H3731.561284933171Q3735.9594471445926 466.5476913730255 3735.9594471445926 461.923982381531V454.3681652490887H3748.8156136087478V462.26230255164035Q3748.8156136087478 467.90097205346297 3745.7143453827457 471.39694714459296Q3742.613077156743 474.89292223572295 3736.523314094775 474.89292223572295H3735.5083535844465V518.6489975698663Q3735.5083535844465 529.5880164034022 3731.110191373025 536.8055133657351Q3726.7120291616034 544.023010328068 3719.2125987241793 547.5753721142163Q3711.7131682867553 551.1277339003645 3702.2402035236933 551.1277339003645ZM3703.0296172539483 577.0656136087484Q3699.3080953827457 577.0656136087484 3696.93985419198 574.5845990279465Q3694.5716130012147 572.1035844471446 3694.5716130012147 568.7203827460511Q3694.5716130012147 565.224407654921 3696.93985419198 562.743393074119Q3699.3080953827457 560.2623784933171 3703.0296172539483 560.2623784933171Q3706.638365735115 560.2623784933171 3709.00660692588 562.743393074119Q3711.374848116646 565.224407654921 3711.374848116646 568.7203827460511Q3711.374848116646 572.1035844471446 3709.00660692588 574.5845990279465Q3706.638365735115 577.0656136087484 3703.0296172539483 577.0656136087484Z"/></svg></a>
+        <p class="sig">Moving Minds, Mastering Skills.</p>
+      </div>
+      <div><h4>Giải pháp</h4><ul><li><a href="#giai-phap">AI SHIFT</a></li><li><a href="#giai-phap">HER SHIFT</a></li><li><a href="#chan-doan">Chẩn đoán miễn phí</a></li>
+        <li><a href="#startups">Capabilities Grant</a></li></ul></div>
+      <div><h4>Liên hệ</h4><ul><li><a href="mailto:sales@mcl.com.vn">sales@mcl.com.vn</a></li><li>Hà Nội</li></ul></div>
+    </div>
+    <p class="copy">© 2026 M Capability Lab</p>
+  </div>
 </footer>
+
+<script>
+(function(){
+  try{
+    var links=[].slice.call(document.querySelectorAll('nav a'));
+    var map={}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && map[e.target.id]){ links.forEach(function(a){a.classList.remove('active')}); var a=map[e.target.id]; a.classList.add('active'); if(a.scrollIntoView && window.innerWidth<=1100){ a.parentNode.parentNode.parentNode.scrollTo({left:a.offsetLeft-20, behavior:'smooth'}); } } }); },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){ var s=document.getElementById(id); if(s) io.observe(s); });
+  }catch(e){}
+  [['applyForm','formErr','formDone'],['diagForm',null,null]].forEach(function(ids){
+    var form=document.getElementById(ids[0]); if(!form) return;
+    var err=ids[1]?document.getElementById(ids[1]):form.querySelector('.err');
+    var done=ids[2]?document.getElementById(ids[2]):form.nextElementSibling;
+    form.addEventListener('submit',function(ev){
+      ev.preventDefault();
+      if(!form.checkValidity()){ err.style.display='block'; var bad=form.querySelector(':invalid'); if(bad) bad.focus(); return; }
+      err.style.display='none'; form.style.display='none'; done.style.display='block'; done.focus();
+    });
+  });
+})();
+</script>
 </body>
 </html>
